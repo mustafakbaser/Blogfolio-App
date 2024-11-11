@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Menu, X } from 'lucide-react';
+import { BookOpen, Menu, X, Github } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,12 +60,12 @@ export default function Header() {
               </li>
               <li>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/mustafakbaser" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 transform hover:scale-105 transition-all shadow-md hover:shadow-lg"
+                  className="p-2 text-gray-600 hover:text-indigo-600 transition-colors"
                 >
-                  GitHub
+                  <Github className="w-6 h-6" />
                 </a>
               </li>
             </ul>
@@ -105,13 +105,14 @@ export default function Header() {
               </li>
               <li>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/mustafakbaser" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   onClick={() => setIsMenuOpen(false)}
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 transition-all shadow-md"
+                  className="flex items-center space-x-2 text-gray-600 hover:text-indigo-600 transition-colors"
                 >
-                  GitHub
+                  <Github className="w-6 h-6" />
+                  <span>GitHub</span>
                 </a>
               </li>
             </ul>
