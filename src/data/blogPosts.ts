@@ -1,3 +1,5 @@
+import { calculateReadingTime } from '../utils/readingTime';
+
 export interface CodeSection {
   type: 'code';
   content: string;
@@ -22,15 +24,11 @@ export const blogPosts: BlogPost[] = [
     title: "React Server Components: Yeni Nesil Web Uygulamaları",
     slug: "react-server-components",
     category: "Frontend",
-    readTime: "8 dk okuma",
     excerpt: "React Server Components ile daha hızlı ve optimize edilmiş web uygulamaları nasıl geliştirilir?",
     content: [
       "React Server Components (RSC), React ekosisteminde devrim niteliğinde bir yenilik getiriyor. Bu yazıda RSC'nin temel prensiplerini ve kullanım örneklerini inceleyeceğiz.",
-      
       "Server Components'in en önemli avantajı, sunucu tarafında render edilmeleri ve sadece gerekli HTML'in client'a gönderilmesidir. Bu sayede bundle boyutu küçülür ve ilk yükleme performansı artar.",
-      
       "İşte basit bir Server Component örneği:",
-      
       {
         type: "code",
         language: "typescript",
@@ -50,9 +48,7 @@ async function BlogPosts() {
   );
 }`
       },
-      
       "Server Components ile veri çekme işlemleri çok daha basit hale gelir. Async/await kullanarak doğrudan component içinde veri çekebilirsiniz:",
-      
       {
         type: "code",
         language: "typescript",
@@ -65,20 +61,20 @@ export async function getPosts() {
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=2070",
-    publishedAt: "2024-03-10T10:00:00Z"
+    publishedAt: "2024-03-10T10:00:00Z",
+    get readTime() {
+      return calculateReadingTime(this.content);
+    }
   },
   {
     id: 2,
     title: "TypeScript 5.0: Gelişmiş Tip Güvenliği",
     slug: "typescript-5-gelistirmeler",
     category: "Frontend",
-    readTime: "6 dk okuma",
     excerpt: "TypeScript 5.0 ile gelen yeni özellikler ve tip sistemi geliştirmeleri.",
     content: [
       "TypeScript 5.0, JavaScript geliştiricileri için güçlü tip güvenliği ve geliştirici deneyimi sunmaya devam ediyor. Bu yazıda yeni özellikleri inceleyeceğiz.",
-      
       "Const Type Parameters özelliği ile daha güvenli generic tipler oluşturabilirsiniz:",
-      
       {
         type: "code",
         language: "typescript",
@@ -89,9 +85,7 @@ export async function getPosts() {
 // Type: Set<"a" | "b" | "c">
 const set = createSet(['a', 'b', 'c']);`
       },
-      
       "Decorators artık daha esnek ve güçlü. İşte bir örnek:",
-      
       {
         type: "code",
         language: "typescript",
@@ -111,20 +105,20 @@ class Calculator {
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=2128",
-    publishedAt: "2024-03-05T15:30:00Z"
+    publishedAt: "2024-03-05T15:30:00Z",
+    get readTime() {
+      return calculateReadingTime(this.content);
+    }
   },
   {
     id: 3,
     title: "Microservices Mimarisi: En İyi Pratikler",
     slug: "microservices-mimarisi",
     category: "Backend",
-    readTime: "10 dk okuma",
     excerpt: "Microservices mimarisinde en iyi pratikler ve yaygın hatalardan kaçınma yöntemleri.",
     content: [
       "Microservices mimarisi, büyük ölçekli uygulamaları yönetilebilir parçalara ayırmamızı sağlar. Bu yazıda, microservices mimarisinin temel prensiplerini ve best practice'lerini inceleyeceğiz.",
-      
       "İşte basit bir microservice örneği:",
-      
       {
         type: "code",
         language: "typescript",
@@ -148,9 +142,7 @@ app.listen(3000, () => {
   console.log('User service running on port 3000');
 });`
       },
-      
       "Event-driven mimari ile microserviceler arası iletişim:",
-      
       {
         type: "code",
         language: "typescript",
@@ -169,20 +161,20 @@ export async function publishEvent(type: string, data: any) {
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072",
-    publishedAt: "2024-03-01T09:00:00Z"
+    publishedAt: "2024-03-01T09:00:00Z",
+    get readTime() {
+      return calculateReadingTime(this.content);
+    }
   },
   {
     id: 4,
     title: "Docker ve Kubernetes: Container Orchestration",
     slug: "docker-kubernetes-rehberi",
     category: "DevOps",
-    readTime: "12 dk okuma",
     excerpt: "Docker ve Kubernetes ile modern uygulama dağıtımı ve ölçeklendirme stratejileri.",
     content: [
       "Container teknolojileri, modern uygulama geliştirme ve dağıtım süreçlerinin vazgeçilmez bir parçası haline geldi. Bu yazıda Docker ve Kubernetes'in temel kavramlarını inceleyeceğiz.",
-      
       "Örnek bir Dockerfile:",
-      
       {
         type: "code",
         language: "dockerfile",
@@ -201,9 +193,7 @@ EXPOSE 3000
 
 CMD ["npm", "start"]`
       },
-      
       "Kubernetes deployment yapılandırması:",
-      
       {
         type: "code",
         language: "yaml",
@@ -233,20 +223,20 @@ spec:
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&q=80&w=2071",
-    publishedAt: "2024-02-25T14:00:00Z"
+    publishedAt: "2024-02-25T14:00:00Z",
+    get readTime() {
+      return calculateReadingTime(this.content);
+    }
   },
   {
     id: 5,
     title: "Temiz Kod Yazma Sanatı",
     slug: "temiz-kod-yazma-sanati",
     category: "Best Practices",
-    readTime: "7 dk okuma",
     excerpt: "Clean Code prensipleri ve yazılım geliştirmede en iyi pratikler.",
     content: [
       "Temiz kod yazmak, sürdürülebilir ve okunaklı uygulamalar geliştirmenin temelidir. Bu yazıda, clean code prensiplerini ve pratik örneklerini inceleyeceğiz.",
-      
       "SOLID prensiplerini uygulayan bir örnek:",
-      
       {
         type: "code",
         language: "typescript",
@@ -302,20 +292,20 @@ class UserService {
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2070",
-    publishedAt: "2024-02-20T11:00:00Z"
+    publishedAt: "2024-02-20T11:00:00Z",
+    get readTime() {
+      return calculateReadingTime(this.content);
+    }
   },
   {
     id: 6,
     title: "GraphQL ve Modern API Tasarımı",
     slug: "graphql-modern-api",
     category: "Backend",
-    readTime: "9 dk okuma",
     excerpt: "GraphQL ile esnek ve verimli API'ler nasıl tasarlanır?",
     content: [
       "GraphQL, modern API tasarımında devrim yaratan bir sorgu dili ve runtime'dır. REST API'lerin yaşadığı over-fetching ve under-fetching problemlerine elegant bir çözüm sunar.",
-      
       "Temel bir GraphQL schema tanımı:",
-      
       {
         type: "code",
         language: "graphql",
@@ -350,9 +340,7 @@ type Mutation {
   addComment(postId: ID!, content: String!): Comment!
 }`
       },
-      
       "TypeScript ile resolver implementasyonu:",
-      
       {
         type: "code",
         language: "typescript",
@@ -387,6 +375,9 @@ type Mutation {
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2034",
-    publishedAt: "2024-02-15T08:30:00Z"
+    publishedAt: "2024-02-15T08:30:00Z",
+    get readTime() {
+      return calculateReadingTime(this.content);
+    }
   }
 ];

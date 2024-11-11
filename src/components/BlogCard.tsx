@@ -36,7 +36,7 @@ export default function BlogCard({
             <Tag className="w-3 h-3 mr-1" />
             {category}
           </span>
-          <span className="flex items-center">
+          <span className="flex items-center" title="Tahmini okuma süresi">
             <Clock className="w-4 h-4 mr-1" />
             {readTime}
           </span>

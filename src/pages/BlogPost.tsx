@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import CodeBlock from '../components/CodeBlock';
 import SEO from '../components/SEO';
 import AuthorCard from '../components/AuthorCard';
+import SocialShare from '../components/SocialShare';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -27,6 +28,9 @@ export default function BlogPost() {
     navigate(`/?category=${category}`);
     window.scrollTo(0, 0);
   };
+
+  // Get the current URL for sharing
+  const currentUrl = window.location.href;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -94,6 +98,12 @@ export default function BlogPost() {
                 return null;
               })}
             </div>
+
+            <SocialShare
+              url={currentUrl}
+              title={post.title}
+              description={post.excerpt}
+            />
 
             <AuthorCard />
 

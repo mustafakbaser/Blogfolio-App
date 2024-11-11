@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Code2, Cpu } from 'lucide-react';
 import { blogPosts } from '../data/blogPosts';
 import Header from '../components/Header';
 import BlogCard from '../components/BlogCard';
@@ -48,7 +49,13 @@ export default function Home() {
       <main className="flex-grow max-w-5xl mx-auto px-4 py-12 w-full">
         <div className="space-y-12">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <div className="inline-flex items-center justify-center p-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl mb-6">
+              <div className="flex items-center space-x-2 px-4 py-2 bg-white rounded-xl shadow-sm">
+                <Code2 className="w-5 h-5 text-indigo-600" />
+                <Cpu className="w-5 h-5 text-purple-600" />
+              </div>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 mb-4">
               Yazılım ve Teknoloji Blogu
             </h1>
             <p className="text-xl text-gray-600">
