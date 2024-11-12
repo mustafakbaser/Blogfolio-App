@@ -39,56 +39,58 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <SEO 
         title="Ana Sayfa"
         description="Modern teknoloji ve yazılım geliştirme üzerine güncel blog yazıları. React, TypeScript, Node.js ve daha fazlası."
       />
       <Header />
       
-      <main className="flex-grow max-w-5xl mx-auto px-4 py-12 w-full">
-        <div className="space-y-12">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center justify-center p-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl mb-6">
-              <div className="flex items-center space-x-2 px-4 py-2 bg-white rounded-xl shadow-sm">
-                <Code2 className="w-5 h-5 text-indigo-600" />
-                <Cpu className="w-5 h-5 text-purple-600" />
+      <main className="flex-grow pt-28 md:pt-32">
+        <div className="max-w-5xl mx-auto px-4 py-12">
+          <div className="space-y-12">
+            <div className="text-center max-w-3xl mx-auto">
+              <div className="inline-flex items-center justify-center p-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl mb-6">
+                <div className="flex items-center space-x-2 px-4 py-2 bg-white rounded-xl shadow-sm">
+                  <Code2 className="w-5 h-5 text-indigo-600" />
+                  <Cpu className="w-5 h-5 text-purple-600" />
+                </div>
               </div>
+              <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 mb-4">
+                Yazılım ve Teknoloji Blogu
+              </h1>
+              <p className="text-xl text-gray-600">
+                Modern web teknolojileri, yazılım geliştirme ve en iyi uygulamalar hakkında derinlemesine içerikler
+              </p>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 mb-4">
-              Yazılım ve Teknoloji Blogu
-            </h1>
-            <p className="text-xl text-gray-600">
-              Modern web teknolojileri, yazılım geliştirme ve en iyi uygulamalar hakkında derinlemesine içerikler
-            </p>
-          </div>
-          
-          <CategoryFilter
-            categories={categories}
-            selectedCategory={selectedCategory}
-            onSelectCategory={handleCategorySelect}
-          />
+            
+            <CategoryFilter
+              categories={categories}
+              selectedCategory={selectedCategory}
+              onSelectCategory={handleCategorySelect}
+            />
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {filteredPosts.map((post) => (
-              <BlogCard
-                key={post.id}
-                title={post.title}
-                excerpt={post.excerpt}
-                date={new Date(post.publishedAt).toLocaleDateString('tr-TR')}
-                imageUrl={post.imageUrl}
-                slug={post.slug}
-                readTime={post.readTime}
-                category={post.category}
-              />
-            ))}
-          </div>
-
-          {filteredPosts.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-600">Bu kategoride henüz yazı bulunmuyor.</p>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {filteredPosts.map((post) => (
+                <BlogCard
+                  key={post.id}
+                  title={post.title}
+                  excerpt={post.excerpt}
+                  date={new Date(post.publishedAt).toLocaleDateString('tr-TR')}
+                  imageUrl={post.imageUrl}
+                  slug={post.slug}
+                  readTime={post.readTime}
+                  category={post.category}
+                />
+              ))}
             </div>
-          )}
+
+            {filteredPosts.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-600">Bu kategoride henüz yazı bulunmuyor.</p>
+              </div>
+            )}
+          </div>
         </div>
       </main>
 

@@ -43,7 +43,7 @@ export default function About() {
       />
       <Header />
       
-      <main className="flex-grow bg-gray-50">
+      <main className="flex-grow bg-gray-50 pt-28 md:pt-32">
         <div className="max-w-5xl mx-auto px-4 py-12">
           {/* Hero Section */}
           <div className="text-center mb-16">
