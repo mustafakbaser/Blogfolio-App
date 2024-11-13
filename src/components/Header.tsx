@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Menu, X, Github, Search, Home, User, Mail, Loader2 } from 'lucide-react';
+import { BookOpen, Menu, X, Github, Search, Home, User, Mail, Loader2, Briefcase } from 'lucide-react';
 import { useSearch } from '../hooks/useSearch';
 import SearchResults from './SearchResults';
 
@@ -78,6 +78,16 @@ export default function Header() {
             >
               <Home className="w-4 h-4" />
               <span>Ana Sayfa</span>
+            </Link>
+
+            <Link 
+              to="/portfolio" 
+              className={`flex items-center space-x-1.5 text-gray-600 hover:text-indigo-600 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-indigo-600 after:transition-all ${
+                isActivePath('/portfolio') ? 'text-indigo-600 after:w-full' : ''
+              }`}
+            >
+              <Briefcase className="w-4 h-4" />
+              <span>Portfolyo</span>
             </Link>
 
             <Link 
@@ -221,6 +231,17 @@ export default function Header() {
                   >
                     <Home className="w-5 h-5" />
                     <span>Ana Sayfa</span>
+                  </Link>
+
+                  <Link 
+                    to="/portfolio"
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
+                      isActivePath('/portfolio') ? 'text-indigo-600 bg-indigo-50' : 'text-gray-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    <Briefcase className="w-5 h-5" />
+                    <span>Portfolyo</span>
                   </Link>
 
                   <Link 

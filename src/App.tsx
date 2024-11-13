@@ -17,6 +17,7 @@ export default function App() {
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/iletisim" element={<Contact />} />
         <Route path="/hakkimda" element={<About />} />
+        <Route path="/portfolio" element={<Portfolio />} />
       </Routes>
       <CookieConsent />
     </BrowserRouter>
