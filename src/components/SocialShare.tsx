@@ -28,9 +28,9 @@ export default function SocialShare({ url, title, description }: SocialShareProp
   };
 
   return (
-    <div className="border-t border-b border-gray-100 py-6 my-8">
+    <div className="border-t border-b border-gray-100 dark:border-gray-800 py-6 my-8">
       <div className="flex flex-col items-center gap-4">
-        <h3 className="text-gray-900 font-medium">Bu yazıyı paylaş</h3>
+        <h3 className="text-gray-900 dark:text-gray-100 font-medium">Bu yazıyı paylaş</h3>
         <div className="flex items-center gap-3">
           <a
             href={shareLinks.facebook}
@@ -61,7 +61,7 @@ export default function SocialShare({ url, title, description }: SocialShareProp
           </a>
           <button
             onClick={copyToClipboard}
-            className="p-3 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
+            className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             title="Linki kopyala"
           >
             <Link2 className="w-5 h-5" />

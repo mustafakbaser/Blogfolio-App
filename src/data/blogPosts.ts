@@ -22,33 +22,30 @@ export const blogPosts: BlogPost[] = [
   {
     id: 1,
     title: 'React Server Components: Yeni Nesil Web Uygulamaları',
-    slug: 'react-server-components',
+    slug: 'nesne-yonelimli-programlama-rehberi',
     category: 'Frontend',
     excerpt:
-      'React Server Components ile daha hızlı ve optimize edilmiş web uygulamaları nasıl geliştirilir?',
+      'Yazılımın gerçek dünyadaki nesne modelleri üzerinden tasarlamak ve bu nesneler arasındaki etkileşim...',
     content: [
-      "React Server Components (RSC), React ekosisteminde devrim niteliğinde bir yenilik getiriyor. Bu yazıda RSC'nin temel prensiplerini ve kullanım örneklerini inceleyeceğiz.",
-      "Server Components'in en önemli avantajı, sunucu tarafında render edilmeleri ve sadece gerekli HTML'in client'a gönderilmesidir. Bu sayede bundle boyutu küçülür ve ilk yükleme performansı artar.",
-      'İşte basit bir Server Component örneği:',
+      'Nesne Yönelimli Programlama (OOP) ya da Nesne Odaklı Programlama, ismini çok sık duyduğumuz modern bilgisayar sistemlerinin temel taşlarından biridir. Nesne yönelimli programlamanın esas amacı, yazılımı gerçek dünyadaki nesnelerin modelleri üzerinden tasarlamak ve bu nesneler arasındaki etkileşimleri yönetmektir. Bu yaklaşım, karmaşık sistemleri daha yönetilebilir parçalara böler ve tekrar kullanılabilirlik, esneklik ve sürdürülebilirlik gibi avantajlar sağlar.',
+      'Nesne yönelimli programlamada, veri ve işlevsellik birlikte gruplanır ve "nesne" adı verilen yapılar oluşturulur. Bu nesnelerin içinde bulunan verilerin ve işlevlerin birbirleriyle ilişkisi belirli kurallarla tanımlanır. Bu sayede, bir nesne üzerinde yapılan değişiklikler diğer nesneleri etkileyebilir, bu da yazılımın daha tutarlı ve güvenilir olmasını sağlar.',
+      'Şöyle düşünelim, bir araba, bir müşteri veya bir kitap gibi herhangi bir nesneyi ele alalım. Her biri bir sınıfın örneği olabilir. Bu sınıflar, nesnelerin özelliklerini (örneğin, bir arabanın markası, rengi veya bir müşterinin adı) ve davranışlarını (örneğin, bir arabanın çalıştırılması veya bir müşteriye sipariş verilmesi) tanımlar.',
+      'Konuya daha derinden bakmak için, OOP`yi anlamak için sadece nesne, sınıf, kalıtım gibi kavramlara değil, büyük resme bakmak gerektir. Dr. Alan Kay, bu konunun ana odağının nesneler değil, haberleşme / mesajlaşma olduğunu belirtir. Sistemlerin birbiriyle mesajlaşması. En basit şekilde, Bir kodun, bir başka kod ile iletişime geçip yanıt alması şeklinde basitleştirebiliriz. Yani bütün bilgisayar sistemlerinin, birbirlerini etkilemeden haberleşebilmesini sağlamaktır.',
       {
         type: 'code',
-        language: 'typescript',
-        content: `// app/page.tsx
-async function BlogPosts() {
-  const posts = await getPosts();
-  
-  return (
-    <div>
-      {posts.map(post => (
-        <article key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.excerpt}</p>
-        </article>
-      ))}
-    </div>
-  );
-}`,
-      },
+        language: 'java',
+        content: `public class Araba {
+    // Alanlar (Özellikler)
+    String marka;
+    String model;
+    String renk;
+
+    // Metodlar
+    public void calis() {
+      System.out.println("Araba çalıştırıldı.");
+    }
+  }`,
+},
       'Server Components ile veri çekme işlemleri çok daha basit hale gelir. Async/await kullanarak doğrudan component içinde veri çekebilirsiniz:',
       {
         type: 'code',

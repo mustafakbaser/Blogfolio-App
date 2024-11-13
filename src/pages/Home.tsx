@@ -46,21 +46,21 @@ export default function Home() {
       />
       <Header />
       
-      <main className="flex-grow pt-28 md:pt-32">
+      <main className="flex-grow pt-28 md:pt-24">
         <div className="max-w-5xl mx-auto px-4 py-12">
           <div className="space-y-12">
             <div className="text-center max-w-3xl mx-auto">
-              <div className="inline-flex items-center justify-center p-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl mb-6">
+              <div className="inline-flex items-center justify-center p-2 rounded-2xl mb-6">
                 <div className="flex items-center space-x-2 px-4 py-2 bg-white rounded-xl shadow-sm">
                   <Code2 className="w-5 h-5 text-indigo-600" />
                   <Cpu className="w-5 h-5 text-purple-600" />
                 </div>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 mb-4">
+              <h1 className="pb-6 text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 mb-6">
                 Yazılım ve Teknoloji Blogu
               </h1>
               <p className="text-xl text-gray-600">
-                Modern web teknolojileri, yazılım geliştirme ve en iyi uygulamalar hakkında derinlemesine içerikler
+                Modern teknolojiler, yazılım geliştirme, sanat ve insan beyni hakkında içerikler.
               </p>
             </div>
             

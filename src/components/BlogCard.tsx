@@ -22,7 +22,7 @@ export default function BlogCard({
   category 
 }: BlogCardProps) {
   return (
-    <article className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+    <article className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
       <Link to={`/blog/${slug}`} className="block aspect-video overflow-hidden">
         <img 
           src={imageUrl} 
@@ -31,8 +31,8 @@ export default function BlogCard({
         />
       </Link>
       <div className="p-6 flex-grow flex flex-col">
-        <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+        <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-300">
             <Tag className="w-3 h-3 mr-1" />
             {category}
           </span>
@@ -41,17 +41,17 @@ export default function BlogCard({
             {readTime}
           </span>
         </div>
-        <h2 className="text-xl font-semibold text-gray-900 leading-tight mb-2 hover:text-indigo-600 transition-colors">
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 leading-tight mb-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
           <Link to={`/blog/${slug}`}>{title}</Link>
         </h2>
-        <p className="text-gray-600 leading-relaxed line-clamp-3 mb-4 flex-grow">
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-3 mb-4 flex-grow">
           {excerpt}
         </p>
-        <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-          <time className="text-sm text-gray-500">{date}</time>
+        <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+          <time className="text-sm text-gray-500 dark:text-gray-400">{date}</time>
           <Link 
             to={`/blog/${slug}`}
-            className="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-medium text-sm"
+            className="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium text-sm"
           >
             Devamını Oku 
             <span className="ml-1">→</span>
