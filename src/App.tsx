@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Portfolio from './pages/Portfolio';
 import CookieConsent from './components/CookieConsent';
 import { useCookieConsent } from './hooks/useCookieConsent';
 
