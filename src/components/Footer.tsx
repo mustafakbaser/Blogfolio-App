@@ -3,7 +3,7 @@ import { Github, Twitter, Linkedin, BookOpen } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+    <footer className="bg-white dark:bg-gray-800/50 border-t border-gray-200 dark:border-gray-700/50 backdrop-blur-sm">
       <div className="max-w-5xl mx-auto px-6 py-8">
         <div className="flex flex-col items-center justify-center space-y-6">
           <div className="flex items-center space-x-6">

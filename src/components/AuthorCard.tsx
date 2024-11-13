@@ -3,15 +3,15 @@ import { Github, Twitter, Linkedin } from 'lucide-react';
 
 export default function AuthorCard() {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 my-12">
+    <div className="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700/50 my-12 backdrop-blur-sm">
       <div className="flex items-start gap-6">
         <img
           src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=200&h=200"
           alt="Yazar"
-          className="w-24 h-24 rounded-lg object-cover"
+          className="w-24 h-24 rounded-lg object-cover ring-2 ring-gray-100 dark:ring-gray-700"
         />
         <div className="flex-1">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Yazar Adı</h3>
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-2">Yazar Adı</h3>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
             Yazılım Mühendisi. Okumaktan, yazmaktan; öğrendiğini paylaşmaktan büyük keyif duyar. 
             Yazılım geliştirme dışında; tarih, sanat ve insan psikolojisine dair okuma yapmak 

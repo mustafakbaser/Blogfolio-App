@@ -34,61 +34,67 @@ export default {
         },
         dark: {
           css: {
-            color: '#9ca3af',
+            color: '#e5e7eb',
             '[class~="lead"]': {
-              color: '#9ca3af',
+              color: '#e5e7eb',
             },
             a: {
-              color: '#60a5fa',
+              color: '#93c5fd',
             },
             strong: {
-              color: '#f3f4f6',
+              color: '#f9fafb',
             },
             'ol > li::before': {
-              color: '#9ca3af',
+              color: '#d1d5db',
             },
             'ul > li::before': {
-              backgroundColor: '#4b5563',
+              backgroundColor: '#6b7280',
             },
             hr: {
               borderColor: '#374151',
             },
             blockquote: {
-              color: '#9ca3af',
+              color: '#e5e7eb',
               borderLeftColor: '#4b5563',
             },
             h1: {
-              color: '#f3f4f6',
+              color: '#f9fafb',
             },
             h2: {
-              color: '#f3f4f6',
+              color: '#f9fafb',
             },
             h3: {
-              color: '#f3f4f6',
+              color: '#f9fafb',
             },
             h4: {
-              color: '#f3f4f6',
+              color: '#f9fafb',
             },
             'figure figcaption': {
-              color: '#9ca3af',
+              color: '#d1d5db',
             },
             code: {
-              color: '#f3f4f6',
+              color: '#f9fafb',
             },
             'a code': {
-              color: '#60a5fa',
+              color: '#93c5fd',
             },
             pre: {
-              color: '#e5e7eb',
+              color: '#f3f4f6',
               backgroundColor: '#1f2937',
             },
             thead: {
-              color: '#f3f4f6',
+              color: '#f9fafb',
               borderBottomColor: '#4b5563',
             },
             'tbody tr': {
               borderBottomColor: '#374151',
             },
+            p: {
+              color: '#e5e7eb',
+            },
+            li: {
+              color: '#e5e7eb',
+            }
           },
         },
       }

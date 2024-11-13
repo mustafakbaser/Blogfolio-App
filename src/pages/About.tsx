@@ -43,7 +43,7 @@ export default function About() {
       />
       <Header />
       
-      <main className="flex-grow bg-gray-50 pt-28 md:pt-32">
+      <main className="flex-grow bg-gray-50 dark:bg-gray-900 pt-28 md:pt-32">
         <div className="max-w-5xl mx-auto px-4 py-12">
           {/* Hero Section */}
           <div className="text-center mb-16">
@@ -51,28 +51,28 @@ export default function About() {
               <img
                 src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=200&h=200"
                 alt="Profile"
-                className="w-40 h-40 rounded-full object-cover border-4 border-white shadow-lg"
+                className="w-40 h-40 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-lg"
               />
               <div className="absolute -bottom-2 -right-2 bg-indigo-600 text-white p-2 rounded-full shadow-lg">
                 <Code2 className="w-5 h-5" />
               </div>
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Mustafa Başer</h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">Mustafa Başer</h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
               Tutkulu bir yazılım geliştirici olarak, modern web teknolojileri ve kullanıcı deneyimi odaklı 
               çözümler üretmekten keyif alıyorum.
             </p>
             <div className="flex justify-center space-x-4">
-              <a href="#" className="p-2 text-gray-600 hover:text-indigo-600 transition-colors">
+              <a href="#" className="p-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="#" className="p-2 text-gray-600 hover:text-indigo-600 transition-colors">
+              <a href="#" className="p-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                 <Twitter className="w-6 h-6" />
               </a>
-              <a href="#" className="p-2 text-gray-600 hover:text-indigo-600 transition-colors">
+              <a href="#" className="p-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="mailto:iletisim@mustafabaser.net" className="p-2 text-gray-600 hover:text-indigo-600 transition-colors">
+              <a href="mailto:iletisim@mustafabaser.net" className="p-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
             </div>
@@ -80,20 +80,20 @@ export default function About() {
 
           {/* Skills Section */}
           <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Yetenekler</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8 text-center">Yetenekler</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {skills.map((skill, index) => (
                 <div 
                   key={index}
-                  className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-center mb-4">
-                    <skill.icon className="w-6 h-6 text-indigo-600 mr-3" />
-                    <h3 className="font-semibold text-gray-900">{skill.name}</h3>
+                    <skill.icon className="w-6 h-6 text-indigo-600 dark:text-indigo-400 mr-3" />
+                    <h3 className="font-semibold text-gray-900 dark:text-gray-50">{skill.name}</h3>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                     <div 
-                      className="bg-gradient-to-r from-indigo-600 to-indigo-400 h-2.5 rounded-full transition-all duration-500"
+                      className="bg-gradient-to-r from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-300 h-2.5 rounded-full transition-all duration-500"
                       style={{ width: `${skill.level}%` }}
                     />
                   </div>
@@ -104,21 +104,21 @@ export default function About() {
 
           {/* Experience Section */}
           <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Deneyim</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8 text-center">Deneyim</h2>
             <div className="space-y-6">
               {experiences.map((exp, index) => (
                 <div 
                   key={index}
-                  className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="flex flex-wrap items-start justify-between mb-2">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{exp.title}</h3>
-                      <p className="text-indigo-600">{exp.company}</p>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50">{exp.title}</h3>
+                      <p className="text-indigo-600 dark:text-indigo-400">{exp.company}</p>
                     </div>
-                    <span className="text-sm text-gray-500">{exp.period}</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">{exp.period}</span>
                   </div>
-                  <p className="text-gray-600">{exp.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{exp.description}</p>
                 </div>
               ))}
             </div>
@@ -126,8 +126,8 @@ export default function About() {
 
           {/* Tech Stack Section */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Teknoloji Yığını</h2>
-            <div className="bg-white rounded-xl p-8 shadow-sm">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8 text-center">Teknoloji Yığını</h2>
+            <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-sm">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
                   'React', 'TypeScript', 'Node.js', 'Next.js',
@@ -135,9 +135,9 @@ export default function About() {
                 ].map((tech, index) => (
                   <div 
                     key={index}
-                    className="flex items-center justify-center p-4 rounded-lg bg-gray-50 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                    className="flex items-center justify-center p-4 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                   >
-                    <span className="font-medium">{tech}</span>
+                    <span className="font-medium text-gray-900 dark:text-gray-50">{tech}</span>
                   </div>
                 ))}
               </div>
