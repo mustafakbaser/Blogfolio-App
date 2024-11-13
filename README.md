@@ -2,7 +2,7 @@
 
 A modern, responsive blog and portfolio template built with React, TypeScript, and Tailwind CSS. Features a beautiful dark mode, SEO optimization, and a clean, professional design.
 
-![BlogFolio Preview](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2072)
+![BlogFolio Preview](https://i.imgur.com/Vs4nIU1.png)
 
 ## ✨ Features
 
@@ -97,7 +97,8 @@ VITE_GA_TRACKING_ID=your_ga_tracking_id
 ```
 
 ### Blog Posts
-Add or modify blog posts in `src/data/blogPosts.ts`.
+Add or modify blog posts in `src/data/blogPosts.ts`.^
+
 **Developer's Recommendation:** If you want your blog to have a structured and expandable content management structure, then I would suggest going with a Headless CMS. Putting a Headless CMS in front of GraphQL or REST APIs for content delivery and integration with any head frameworks. The way you set this up makes your blog more dynamic in nature because it keeps the content management centralized and all the while enables a swift, seamless mechanism in the back-end which eventually caters to an engaging user experience.
 
 ## 🎯 Roadmap
