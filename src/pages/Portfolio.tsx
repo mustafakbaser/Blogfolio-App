@@ -59,10 +59,10 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto px-4 py-12">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Projelerim
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
               Modern teknolojiler kullanarak geliştirdiğim projeler ve çalışmalar
             </p>
           </div>

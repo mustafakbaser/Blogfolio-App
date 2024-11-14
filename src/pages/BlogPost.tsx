@@ -55,7 +55,7 @@ export default function BlogPost() {
                 <div className="flex items-center gap-4 mb-4">
                   <button
                     onClick={() => handleCategoryClick(post.category)}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 hover:bg-indigo-200 transition-colors"
+                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 hover:bg-indigo-200 transition-colors dark:bg-indigo-500/20 dark:text-indigo-200 dark:hover:bg-indigo-500/30"
                   >
                     <Tag className="w-4 h-4 mr-2" />
                     {post.category}
@@ -81,10 +81,10 @@ export default function BlogPost() {
           </div>
 
           <div className="max-w-4xl mx-auto px-4 py-12">
-            <div className="prose prose-lg prose-indigo max-w-none">
+            <div className="prose prose-lg prose-indigo dark:prose-invert max-w-none">
               {post.content.map((section, index) => {
                 if (typeof section === 'string') {
-                  return <p key={index} className="mb-4">{section.trim()}</p>;
+                  return <p key={index} className="mb-4 text-gray-800 dark:text-gray-100">{section.trim()}</p>;
                 }
                 if (section.type === 'code') {
                   return (
@@ -107,8 +107,8 @@ export default function BlogPost() {
 
             <AuthorCard />
 
-            <div className="mt-12 pt-8 border-t">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Benzer Yazılar</h2>
+            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-6">Benzer Yazılar</h2>
               <div className="grid gap-8 md:grid-cols-2">
                 {blogPosts
                   .filter(p => p.slug !== post.slug && p.category === post.category)
@@ -127,7 +127,7 @@ export default function BlogPost() {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <h3 className="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                      <h3 className="font-semibold text-gray-900 dark:text-gray-50 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                         {relatedPost.title}
                       </h3>
                     </Link>

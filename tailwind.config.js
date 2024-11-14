@@ -88,9 +88,9 @@ export default {
         },
         dark: {
           css: {
-            color: '#e5e7eb',
+            color: '#f3f4f6', // gray-100
             '[class~="lead"]': {
-              color: '#e5e7eb',
+              color: '#f3f4f6',
             },
             a: {
               color: '#93c5fd',
@@ -99,16 +99,16 @@ export default {
               color: '#f9fafb',
             },
             'ol > li::before': {
-              color: '#d1d5db',
+              color: '#e5e7eb',
             },
             'ul > li::before': {
-              backgroundColor: '#6b7280',
+              backgroundColor: '#9ca3af',
             },
             hr: {
               borderColor: '#374151',
             },
             blockquote: {
-              color: '#e5e7eb',
+              color: '#f3f4f6',
               borderLeftColor: '#4b5563',
             },
             h1: {
@@ -124,7 +124,7 @@ export default {
               color: '#f9fafb',
             },
             'figure figcaption': {
-              color: '#d1d5db',
+              color: '#e5e7eb',
             },
             code: {
               color: '#f9fafb',
@@ -144,10 +144,10 @@ export default {
               borderBottomColor: '#374151',
             },
             p: {
-              color: '#e5e7eb',
+              color: '#f3f4f6', // Daha parlak bir gri
             },
             li: {
-              color: '#e5e7eb',
+              color: '#f3f4f6', // Daha parlak bir gri
             }
           },
         },

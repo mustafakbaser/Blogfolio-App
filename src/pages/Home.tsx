@@ -51,15 +51,15 @@ export default function Home() {
           <div className="space-y-12">
             <div className="text-center max-w-3xl mx-auto">
               <div className="inline-flex items-center justify-center p-2 rounded-2xl mb-6">
-                <div className="flex items-center space-x-2 px-4 py-2 bg-white rounded-xl shadow-sm">
-                  <Code2 className="w-5 h-5 text-indigo-600" />
-                  <Cpu className="w-5 h-5 text-purple-600" />
+                <div className="flex items-center space-x-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+                  <Code2 className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                  <Cpu className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                 </div>
               </div>
-              <h1 className="pb-6 text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 mb-6">
+              <h1 className="pb-6 text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                 Yazılım ve Teknoloji Blogu
               </h1>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-200">
                 Modern teknolojiler, yazılım geliştirme, sanat ve insan beyni hakkında içerikler.
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function Home() {
 
             {filteredPosts.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-600">Bu kategoride henüz yazı bulunmuyor.</p>
+                <p className="text-gray-600 dark:text-gray-300">Bu kategoride henüz yazı bulunmuyor.</p>
               </div>
             )}
           </div>

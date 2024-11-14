@@ -22,6 +22,17 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     performSearch(searchQuery);
@@ -44,7 +55,7 @@ export default function Header() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
       }`}
     >
@@ -55,7 +66,7 @@ export default function Header() {
             className="flex items-center space-x-2 relative group"
           >
             <div className="absolute -inset-2 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-all duration-300" />
-            <BookOpen className="h-8 w-8 text-indigo-600 transform group-hover:scale-110 transition-transform duration-300" />
+            <BookOpen className="h-8 w-8 text-indigo-600 dark:text-indigo-400 transform group-hover:scale-110 transition-transform duration-300" />
             <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
               MKB
             </span>
@@ -69,7 +80,7 @@ export default function Header() {
                 className="p-2.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
                 aria-label="Search"
               >
-                <Search className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                <Search className="w-5 h-5 text-gray-600 dark:text-gray-300" />
               </button>
 
               <ThemeToggle />
@@ -77,7 +88,7 @@ export default function Header() {
 
             <Link 
               to="/" 
-              className={`flex items-center space-x-1.5 text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all ${
+              className={`flex items-center space-x-1.5 text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all ${
                 isActivePath('/') ? 'text-indigo-600 dark:text-indigo-400 after:w-full' : ''
               }`}
             >
@@ -87,7 +98,7 @@ export default function Header() {
 
             <Link 
               to="/portfolio" 
-              className={`flex items-center space-x-1.5 text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all ${
+              className={`flex items-center space-x-1.5 text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all ${
                 isActivePath('/portfolio') ? 'text-indigo-600 dark:text-indigo-400 after:w-full' : ''
               }`}
             >
@@ -97,7 +108,7 @@ export default function Header() {
 
             <Link 
               to="/hakkimda" 
-              className={`flex items-center space-x-1.5 text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all ${
+              className={`flex items-center space-x-1.5 text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all ${
                 isActivePath('/hakkimda') ? 'text-indigo-600 dark:text-indigo-400 after:w-full' : ''
               }`}
             >
@@ -107,7 +118,7 @@ export default function Header() {
 
             <Link 
               to="/iletisim" 
-              className={`flex items-center space-x-1.5 text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all ${
+              className={`flex items-center space-x-1.5 text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all ${
                 isActivePath('/iletisim') ? 'text-indigo-600 dark:text-indigo-400 after:w-full' : ''
               }`}
             >
@@ -119,7 +130,7 @@ export default function Header() {
               href="https://github.com/mustafakbaser" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-2.5 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors hover:scale-110 transform duration-200"
+              className="p-2.5 text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors hover:scale-110 transform duration-200"
             >
               <Github className="w-5 h-5" />
             </a>
@@ -134,9 +145,9 @@ export default function Header() {
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6 text-gray-600 dark:text-gray-400" />
+                <X className="h-6 w-6 text-gray-700 dark:text-gray-200" />
               ) : (
-                <Menu className="h-6 w-6 text-gray-600 dark:text-gray-400" />
+                <Menu className="h-6 w-6 text-gray-700 dark:text-gray-200" />
               )}
             </button>
           </div>
