@@ -387,4 +387,298 @@ type Mutation {
       return calculateReadingTime(this.content);
     },
   },
+    {
+      id: 7,
+      title: 'REST API Tasarım İlkeleri',
+      slug: 'rest-api-tasarim-ilkeleri',
+      category: 'Backend',
+      excerpt: 'RESTful API tasarımında en iyi uygulamaları öğrenin.',
+      content: [
+        "REST, API tasarımında yaygın olarak kullanılan bir mimari stildir. Kaynak temelli yapısı ile veri paylaşımı ve sistemler arası etkileşimi kolaylaştırır.",
+        'Örnek bir RESTful kaynak yapısı:',
+        {
+          type: 'code',
+          language: 'javascript',
+          content: `GET /users/{id}
+  PUT /users/{id}
+  DELETE /users/{id}
+  POST /users`
+        },
+        'Express ile basit bir REST API oluşturma:',
+        {
+          type: 'code',
+          language: 'javascript',
+          content: `const express = require('express');
+  const app = express();
+  app.use(express.json());
+  
+  app.get('/users/:id', (req, res) => {
+    const user = users.find(u => u.id === req.params.id);
+    res.send(user);
+  });`
+        }
+      ],
+      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=REST+API+Tasarım+İlkeleri',
+      publishedAt: '2024-03-10T10:00:00Z',
+      get readTime() {
+        return calculateReadingTime(this.content);
+      }
+    },
+  
+    {
+      id: 8,
+      title: 'JavaScript ile Fonksiyonel Programlama',
+      slug: 'javascript-fonksiyonel-programlama',
+      category: 'Frontend',
+      excerpt: 'Fonksiyonel programlama prensiplerini JavaScript ile uygulayın.',
+      content: [
+        "Fonksiyonel programlama, yan etkisiz fonksiyonlar ve değiştirilemez verilerle yazılım geliştirmeye odaklanır.",
+        'Kapsamlı bir örnek:',
+        {
+          type: 'code',
+          language: 'javascript',
+          content: `const add = (a) => (b) => a + b;
+  const increment = add(1);
+  console.log(increment(2)); // 3`
+        }
+      ],
+      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Fonksiyonel+Programlama',
+      publishedAt: '2024-03-15T09:30:00Z',
+      get readTime() {
+        return calculateReadingTime(this.content);
+      }
+    },
+  
+    {
+      id: 9,
+      title: 'TypeScript ile Güçlü Tip Kontrolü',
+      slug: 'typescript-guclu-tip-kontrolu',
+      category: 'Backend',
+      excerpt: 'TypeScript ile güçlü ve güvenli kod nasıl yazılır?',
+      content: [
+        "TypeScript, JavaScript'in tür güvenliği sağlamayan yapısına çözüm sunarak daha güvenli bir kod yazımını mümkün kılar.",
+        'TypeScript ile basit bir fonksiyon tanımı:',
+        {
+          type: 'code',
+          language: 'typescript',
+          content: `function add(a: number, b: number): number {
+    return a + b;
+  }`
+        }
+      ],
+      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=TypeScript+Tip+Kontrolü',
+      publishedAt: '2024-03-20T11:15:00Z',
+      get readTime() {
+        return calculateReadingTime(this.content);
+      }
+    },
+  
+    {
+      id: 10,
+      title: 'Kapsülleme ve Nesne Tabanlı Programlama',
+      slug: 'kapsulleme-ntp',
+      category: 'Backend',
+      excerpt: 'Nesne tabanlı programlamada kapsülleme prensipleri.',
+      content: [
+        "Kapsülleme, verileri ve işlevleri bir arada tutarak dış erişimi sınırlar ve veri gizliliğini sağlar.",
+        'Kapsülleme örneği:',
+        {
+          type: 'code',
+          language: 'javascript',
+          content: `class Person {
+    #name;
+    
+    constructor(name) {
+      this.#name = name;
+    }
+    
+    getName() {
+      return this.#name;
+    }
+  }`
+        }
+      ],
+      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Kapsülleme',
+      publishedAt: '2024-04-01T14:00:00Z',
+      get readTime() {
+        return calculateReadingTime(this.content);
+      }
+    },
+  
+    {
+      id: 11,
+      title: 'MongoDB ile NoSQL Veritabanı Tasarımı',
+      slug: 'mongodb-nosql-tasarim',
+      category: 'Database',
+      excerpt: 'MongoDB ile esnek ve ölçeklenebilir NoSQL veritabanı nasıl tasarlanır?',
+      content: [
+        "MongoDB, ilişkisel olmayan yapısı ile esnek veri saklama imkanları sunar ve büyük veri setleri ile hızlı çalışır.",
+        'MongoDB veri modeli örneği:',
+        {
+          type: 'code',
+          language: 'javascript',
+          content: `const userSchema = {
+    name: String,
+    email: String,
+    posts: [{ title: String, content: String }]
+  };`
+        }
+      ],
+      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=MongoDB+NoSQL+Veritabanı',
+      publishedAt: '2024-04-12T09:45:00Z',
+      get readTime() {
+        return calculateReadingTime(this.content);
+      }
+    },
+  
+    {
+      id: 12,
+      title: 'Docker ile Uygulama Konteynerleştirme',
+      slug: 'docker-uygulama-konteynerlestirme',
+      category: 'DevOps',
+      excerpt: 'Docker ile uygulamalarınızı izole bir şekilde çalıştırın.',
+      content: [
+        "Docker, uygulama ve bağımlılıklarını bir konteyner içinde izole bir şekilde çalıştırarak taşınabilirlik sağlar.",
+        'Dockerfile örneği:',
+        {
+          type: 'code',
+          language: 'dockerfile',
+          content: `FROM node:14
+  WORKDIR /app
+  COPY . .
+  RUN npm install
+  CMD ["npm", "start"]`
+        }
+      ],
+      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Docker+Konteynerleştirme',
+      publishedAt: '2024-04-20T10:30:00Z',
+      get readTime() {
+        return calculateReadingTime(this.content);
+      }
+    },
+  
+    {
+      id: 13,
+      title: 'Kubernetes ile Mikroservis Yönetimi',
+      slug: 'kubernetes-mikroservis-yonetimi',
+      category: 'DevOps',
+      excerpt: 'Kubernetes ile mikroservisleri ölçeklenebilir ve yönetilebilir bir şekilde çalıştırma.',
+      content: [
+        "Kubernetes, mikroservisleri orkestrasyon ile yönetmek için popüler bir platformdur.",
+        'Basit bir deployment.yaml dosyası:',
+        {
+          type: 'code',
+          language: 'yaml',
+          content: `apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: myapp
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: myapp
+    template:
+      metadata:
+        labels:
+          app: myapp
+      spec:
+        containers:
+        - name: myapp
+          image: myapp:1.0.0`
+        }
+      ],
+      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Kubernetes+Mikroservis+Yönetimi',
+      publishedAt: '2024-04-25T12:10:00Z',
+      get readTime() {
+        return calculateReadingTime(this.content);
+      }
+    },
+  
+    {
+      id: 14,
+      title: 'Vue.js ile SPA Geliştirme',
+      slug: 'vue-spa-gelistirme',
+      category: 'Frontend',
+      excerpt: 'Vue.js ile modern, dinamik tek sayfa uygulamaları nasıl geliştirilir?',
+      content: [
+        "Vue.js, komponent tabanlı yapısı ile dinamik ve hızlı tek sayfa uygulamaları geliştirmeyi sağlar.",
+        'Vue bileşen örneği:',
+        {
+          type: 'code',
+          language: 'javascript',
+          content: `<template>
+    <div>{{ message }}</div>
+  </template>
+  <script>
+  export default {
+    data() {
+      return { message: 'Merhaba Vue!' };
+    }
+  };
+  </script>`
+        }
+      ],
+      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Vue.js+SPA+Geliştirme',
+      publishedAt: '2024-05-05T11:20:00Z',
+      get readTime() {
+        return calculateReadingTime(this.content);
+      }
+    },
+  
+    {
+      id: 15,
+      title: 'Git ile Versiyon Kontrolü',
+      slug: 'git-versiyon-kontrolu',
+      category: 'DevOps',
+      excerpt: 'Git ile sürüm kontrolünün temellerini öğrenin.',
+      content: [
+        "Git, yazılım geliştirme projelerinde versiyon kontrolü sağlamak için yaygın olarak kullanılan bir sistemdir.",
+        'Git komut örneği:',
+        {
+          type: 'code',
+          language: 'bash',
+          content: `git init
+  git add .
+  git commit -m "İlk commit"
+  git push origin main`
+        }
+      ],
+      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Git+Versiyon+Kontrolü',
+      publishedAt: '2024-05-10T09:50:00Z',
+      get readTime() {
+        return calculateReadingTime(this.content);
+      }
+    },
+  
+    {
+      id: 16,
+      title: 'React ile Redux Kullanımı',
+      slug: 'react-redux-kullanimi',
+      category: 'Frontend',
+      excerpt: 'React projelerinde merkezi durum yönetimi için Redux kullanımı.',
+      content: [
+        "Redux, büyük React uygulamalarında durumu yönetmek için kullanılan popüler bir kütüphanedir.",
+        'Redux ile basit bir store yapısı:',
+        {
+          type: 'code',
+          language: 'javascript',
+          content: `import { createStore } from 'redux';
+  const reducer = (state = {}, action) => {
+    switch(action.type) {
+      case 'SET_VALUE':
+        return { ...state, value: action.payload };
+      default:
+        return state;
+    }
+  };
+  const store = createStore(reducer);`
+        }
+      ],
+      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=React+Redux+Kullanımı',
+      publishedAt: '2024-05-15T14:30:00Z',
+      get readTime() {
+        return calculateReadingTime(this.content);
+      }
+    }  
 ];

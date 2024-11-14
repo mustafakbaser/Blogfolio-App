@@ -34,12 +34,12 @@ export default function Contact() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'YOUR-WEB3FORMS-ACCESS-KEY',
+          access_key: 'YOUR-ACCESS-KEY', //WEB3FORMS ACCESS KEY
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           message: formData.message,
-          to: 'iletisim@mustafabaser.net'
+          to: 'YOUR-MAIL-ADDRESS'
         }),
       });
 

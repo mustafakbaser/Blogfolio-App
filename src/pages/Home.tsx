@@ -7,12 +7,16 @@ import BlogCard from '../components/BlogCard';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import CategoryFilter from '../components/CategoryFilter';
+import Pagination from '../components/Pagination';
+
+const POSTS_PER_PAGE = 9; // The number of posts to be displayed per page
 
 export default function Home() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(
     searchParams.get('category')
   );
+  const [currentPage, setCurrentPage] = useState(1);
 
   const categories = useMemo(() => {
     return Array.from(new Set(blogPosts.map(post => post.category))).sort();
@@ -23,9 +27,20 @@ export default function Home() {
     return blogPosts.filter(post => post.category === selectedCategory);
   }, [selectedCategory]);
 
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+
+  // Calculate the posts to be displayed on the current page
+  const currentPosts = useMemo(() => {
+    const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+    return filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+  }, [filteredPosts, currentPage]);
+
   useEffect(() => {
     const category = searchParams.get('category');
     setSelectedCategory(category);
+    // Reset the page number when the category changes
+    setCurrentPage(1);
   }, [searchParams]);
 
   const handleCategorySelect = (category: string | null) => {
@@ -35,7 +50,16 @@ export default function Home() {
       setSearchParams({});
     }
     setSelectedCategory(category);
+    setCurrentPage(1); // Reset the page number when the category changes
     window.scrollTo(0, 0);
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -71,7 +95,7 @@ export default function Home() {
             />
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {filteredPosts.map((post) => (
+              {currentPosts.map((post) => (
                 <BlogCard
                   key={post.id}
                   title={post.title}
@@ -89,6 +113,15 @@ export default function Home() {
               <div className="text-center py-12">
                 <p className="text-gray-600 dark:text-gray-300">Bu kategoride henüz yazı bulunmuyor.</p>
               </div>
+            )}
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
             )}
           </div>
         </div>
