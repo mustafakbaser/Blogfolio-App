@@ -1,684 +1,895 @@
+import { BlogPost } from '../types/blog';
 import { calculateReadingTime } from '../utils/readingTime';
 
-export interface CodeSection {
-  type: 'code';
-  content: string;
-  language: string;
-}
-
-export interface BlogPost {
-  id: number;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: (string | CodeSection)[];
-  imageUrl: string;
-  publishedAt: string;
-  category: string;
-  readTime: string;
-}
-
 export const blogPosts: BlogPost[] = [
+  /* Blog Post 1 */
   {
     id: 1,
-    title: 'React Server Components: Yeni Nesil Web Uygulamaları',
-    slug: 'nesne-yonelimli-programlama-rehberi',
-    category: 'Frontend',
-    excerpt:
-      'Yazılımın gerçek dünyadaki nesne modelleri üzerinden tasarlamak ve bu nesneler arasındaki etkileşim...',
+    title: 'Guide to Object-Oriented Programming',
+    slug: 'guide-to-object-oriented-programming',
+    category: 'Software Principles',
+    excerpt: 'Object-Oriented Programming (OOP), also known as Object-Oriented Programming, is one of the cornerstones of modern computer systems that we hear very often.',
     content: [
-      'Nesne Yönelimli Programlama (OOP) ya da Nesne Odaklı Programlama, ismini çok sık duyduğumuz modern bilgisayar sistemlerinin temel taşlarından biridir. Nesne yönelimli programlamanın esas amacı, yazılımı gerçek dünyadaki nesnelerin modelleri üzerinden tasarlamak ve bu nesneler arasındaki etkileşimleri yönetmektir. Bu yaklaşım, karmaşık sistemleri daha yönetilebilir parçalara böler ve tekrar kullanılabilirlik, esneklik ve sürdürülebilirlik gibi avantajlar sağlar.',
-      'Nesne yönelimli programlamada, veri ve işlevsellik birlikte gruplanır ve "nesne" adı verilen yapılar oluşturulur. Bu nesnelerin içinde bulunan verilerin ve işlevlerin birbirleriyle ilişkisi belirli kurallarla tanımlanır. Bu sayede, bir nesne üzerinde yapılan değişiklikler diğer nesneleri etkileyebilir, bu da yazılımın daha tutarlı ve güvenilir olmasını sağlar.',
-      'Şöyle düşünelim, bir araba, bir müşteri veya bir kitap gibi herhangi bir nesneyi ele alalım. Her biri bir sınıfın örneği olabilir. Bu sınıflar, nesnelerin özelliklerini (örneğin, bir arabanın markası, rengi veya bir müşterinin adı) ve davranışlarını (örneğin, bir arabanın çalıştırılması veya bir müşteriye sipariş verilmesi) tanımlar.',
-      'Konuya daha derinden bakmak için, OOP`yi anlamak için sadece nesne, sınıf, kalıtım gibi kavramlara değil, büyük resme bakmak gerektir. Dr. Alan Kay, bu konunun ana odağının nesneler değil, haberleşme / mesajlaşma olduğunu belirtir. Sistemlerin birbiriyle mesajlaşması. En basit şekilde, Bir kodun, bir başka kod ile iletişime geçip yanıt alması şeklinde basitleştirebiliriz. Yani bütün bilgisayar sistemlerinin, birbirlerini etkilemeden haberleşebilmesini sağlamaktır.',
+      {
+        type: 'text',
+        content: 'Object-Oriented Programming (OOP), also known as Object-Oriented Programming, is one of the cornerstones of modern computer systems that we hear very often.',
+      },
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=2070',
+        alt: 'Car example',
+        caption: 'An example of a car object in OOP',
+      },
       {
         type: 'code',
         language: 'java',
-        content: `public class Araba {
-    // Alanlar (Özellikler)
-    String marka;
-    String model;
-    String renk;
-
-    // Metodlar
-    public void calis() {
-      System.out.println("Araba çalıştırıldı.");
-    }
-  }`,
-},
-      'Server Components ile veri çekme işlemleri çok daha basit hale gelir. Async/await kullanarak doğrudan component içinde veri çekebilirsiniz:',
+        content: 'public class Car { String brand; String model; String color; public void start() { System.out.println("Car started."); } }',
+      },
       {
-        type: 'code',
-        language: 'typescript',
-        content: `// lib/api.ts
-export async function getPosts() {
-  const res = await fetch('https://api.example.com/posts');
-  if (!res.ok) throw new Error('Failed to fetch posts');
-  return res.json();
-}`,
+        type: 'list',
+        ordered: false,
+        items: ['Classes', 'Objects', 'Inheritance', 'Encapsulation', 'Polymorphism', 'Abstraction'],
+      },
+      {
+        type: 'alert',
+        content: 'I have divided this topic into two parts and discussed classes, objects, attributes, and methods in this article.',
+        variant: 'info',
+      },
+      {
+        type: 'quote',
+        content: 'The big idea is messaging.',
+        author: 'Alan Kay',
+        source: 'Dr. Alan Kay on the meaning of “object-oriented programming”',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'In conclusion, Object-Oriented Programming (OOP) is an indispensable approach in modern software development processes.',
+      },
+      {
+        type: 'link',
+        content: 'Object-Oriented Programming | Part 2',
+        url: 'https://mustafabaser.net/object-oriented-programming-2',
+      },
+      {
+        type: 'table',
+        headers: ['Concept', 'Description'],
+        rows: [
+          ['Class', 'A blueprint for creating objects'],
+          ['Object', 'An instance of a class'],
+          ['Inheritance', 'A mechanism for code reuse'],
+          ['Encapsulation', 'Bundling data and methods that operate on the data'],
+          ['Polymorphism', 'The ability to present the same interface for different data types'],
+          ['Abstraction', 'Hiding the complex implementation details and showing only the essential features of the object'],
+        ],
+        caption: 'Key concepts in OOP',
       },
     ],
-    imageUrl:
-      'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=2070',
-    publishedAt: '2024-03-10T10:00:00Z',
+    imageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2070',
+    publishedAt: '2024-01-06T11:26:08Z',
     get readTime() {
       return calculateReadingTime(this.content);
     },
   },
+  /* Blog Post 2 */
   {
     id: 2,
-    title: 'TypeScript 5.0: Gelişmiş Tip Güvenliği',
-    slug: 'typescript-5-gelistirmeler',
-    category: 'Frontend',
-    excerpt:
-      'TypeScript 5.0 ile gelen yeni özellikler ve tip sistemi geliştirmeleri.',
+    title: 'Introduction to Backend Development',
+    slug: 'introduction-to-backend-development',
+    category: 'Backend',
+    excerpt: 'Backend development involves the server-side software that runs in the background of web applications.',
     content: [
-      'TypeScript 5.0, JavaScript geliştiricileri için güçlü tip güvenliği ve geliştirici deneyimi sunmaya devam ediyor. Bu yazıda yeni özellikleri inceleyeceğiz.',
-      'Const Type Parameters özelliği ile daha güvenli generic tipler oluşturabilirsiniz:',
       {
-        type: 'code',
-        language: 'typescript',
-        content: `function createSet<const T extends string[]>(values: T) {
-  return new Set(values);
-}
-
-// Type: Set<"a" | "b" | "c">
-const set = createSet(['a', 'b', 'c']);`,
+        type: 'text',
+        content: 'Backend development involves the server-side software that runs in the background of web applications.',
       },
-      'Decorators artık daha esnek ve güçlü. İşte bir örnek:',
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070',
+        alt: 'Backend example',
+        caption: 'An example of a backend server',
+      },
       {
         type: 'code',
-        language: 'typescript',
-        content: `function logged(target: any, context: ClassMethodDecoratorContext) {
-  return function replacementMethod(this: any, ...args: any[]) {
-    console.log(\`Calling \${context.name} with args:\`, args);
-    return target.call(this, ...args);
-  }
-}
-
-class Calculator {
-  @logged
-  add(a: number, b: number) {
-    return a + b;
-  }
-}`,
+        language: 'javascript',
+        content: 'const express = require("express"); const app = express(); app.get("/", (req, res) => { res.send("Hello World!"); }); app.listen(3000, () => { console.log("Server is running on port 3000"); });',
+      },
+      {
+        type: 'list',
+        ordered: true,
+        items: ['Server Setup', 'API Development', 'Database Management', 'Security', 'Performance Optimization'],
+      },
+      {
+        type: 'alert',
+        content: 'Backend development is crucial for ensuring the security and performance of web applications.',
+        variant: 'success',
+      },
+      {
+        type: 'quote',
+        content: 'The backend is the backbone of any web application.',
+        author: 'Unknown',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'Backend development involves the server-side software that runs in the background of web applications.',
+      },
+      {
+        type: 'link',
+        content: 'Introduction to Backend Development | Part 2',
+        url: 'https://mustafabaser.net/introduction-to-backend-development-2',
+      },
+      {
+        type: 'table',
+        headers: ['Component', 'Description'],
+        rows: [
+          ['Server', 'Handles client requests and responses'],
+          ['API', 'Provides a way for clients to interact with the server'],
+          ['Database', 'Stores and manages data'],
+          ['Security', 'Protects the application from threats'],
+          ['Performance Optimization', 'Ensures the application runs efficiently'],
+        ],
+        caption: 'Key components in backend development',
       },
     ],
-    imageUrl:
-      'https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=2128',
-    publishedAt: '2024-03-05T15:30:00Z',
+    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2070',
+    publishedAt: '2024-01-07T11:26:08Z',
     get readTime() {
       return calculateReadingTime(this.content);
     },
   },
+  /* Blog Post 3 */
   {
     id: 3,
-    title: 'Microservices Mimarisi: En İyi Pratikler',
-    slug: 'microservices-mimarisi',
-    category: 'Backend',
-    excerpt:
-      'Microservices mimarisinde en iyi pratikler ve yaygın hatalardan kaçınma yöntemleri.',
+    title: 'Introduction to Frontend Development',
+    slug: 'introduction-to-frontend-development',
+    category: 'Frontend',
+    excerpt: 'Frontend development involves creating the user interface and the visual, interactive part of web applications.',
     content: [
-      "Microservices mimarisi, büyük ölçekli uygulamaları yönetilebilir parçalara ayırmamızı sağlar. Bu yazıda, microservices mimarisinin temel prensiplerini ve best practice'lerini inceleyeceğiz.",
-      'İşte basit bir microservice örneği:',
       {
-        type: 'code',
-        language: 'typescript',
-        content: `// user-service/src/index.ts
-import express from 'express';
-import { validateUser } from './middleware';
-
-const app = express();
-
-app.post('/api/users', validateUser, async (req, res) => {
-  try {
-    const user = await createUser(req.body);
-    await publishEvent('USER_CREATED', user);
-    res.status(201).json(user);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-});
-
-app.listen(3000, () => {
-  console.log('User service running on port 3000');
-});`,
+        type: 'text',
+        content: 'Frontend development involves creating the user interface and the visual, interactive part of web applications.',
       },
-      'Event-driven mimari ile microserviceler arası iletişim:',
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2070',
+        alt: 'Frontend example',
+        caption: 'An example of a frontend interface',
+      },
       {
         type: 'code',
-        language: 'typescript',
-        content: `// lib/events.ts
-import { kafka } from './kafka';
-
-export async function publishEvent(type: string, data: any) {
-  await kafka.produce({
-    topic: 'user-events',
-    messages: [{
-      key: type,
-      value: JSON.stringify(data)
-    }]
-  });
-}`,
+        language: 'html',
+        content: '<!DOCTYPE html><html><head><title>Frontend Example</title></head><body><h1>Hello World!</h1></body></html>',
+      },
+      {
+        type: 'list',
+        ordered: true,
+        items: ['HTML', 'CSS', 'JavaScript', 'Responsive Design', 'Frameworks (React, Angular, Vue)'],
+      },
+      {
+        type: 'alert',
+        content: 'Frontend development is essential for enhancing user experience.',
+        variant: 'success',
+      },
+      {
+        type: 'quote',
+        content: 'The user interface is the window through which the world interacts with your code.',
+        author: 'Unknown',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'Frontend development involves creating the user interface and the visual, interactive part of web applications.',
+      },
+      {
+        type: 'link',
+        content: 'Introduction to Frontend Development | Part 2',
+        url: 'https://mustafabaser.net/introduction-to-frontend-development-2',
+      },
+      {
+        type: 'table',
+        headers: ['Technology', 'Description'],
+        rows: [
+          ['HTML', 'The standard markup language for creating web pages'],
+          ['CSS', 'Used for styling web pages'],
+          ['JavaScript', 'A programming language for making web pages interactive'],
+          ['Responsive Design', 'Ensures web pages look good on all devices'],
+          ['Frameworks', 'Provide a foundation for building web applications'],
+        ],
+        caption: 'Key technologies in frontend development',
       },
     ],
-    imageUrl:
-      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072',
-    publishedAt: '2024-03-01T09:00:00Z',
+    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    publishedAt: '2024-01-08T11:26:08Z',
     get readTime() {
       return calculateReadingTime(this.content);
     },
   },
+  /* Blog Post 4 */
   {
     id: 4,
-    title: 'Docker ve Kubernetes: Container Orchestration',
-    slug: 'docker-kubernetes-rehberi',
+    title: 'What is DevOps?',
+    slug: 'what-is-devops',
     category: 'DevOps',
-    excerpt:
-      'Docker ve Kubernetes ile modern uygulama dağıtımı ve ölçeklendirme stratejileri.',
+    excerpt: 'DevOps is an approach that combines software development and operations processes.',
     content: [
-      "Container teknolojileri, modern uygulama geliştirme ve dağıtım süreçlerinin vazgeçilmez bir parçası haline geldi. Bu yazıda Docker ve Kubernetes'in temel kavramlarını inceleyeceğiz.",
-      'Örnek bir Dockerfile:',
       {
-        type: 'code',
-        language: 'dockerfile',
-        content: `FROM node:18-alpine
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm install
-
-COPY . .
-
-RUN npm run build
-
-EXPOSE 3000
-
-CMD ["npm", "start"]`,
+        type: 'text',
+        content: 'DevOps is an approach that combines software development and operations processes.',
       },
-      'Kubernetes deployment yapılandırması:',
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070',
+        alt: 'DevOps example',
+        caption: 'An example of DevOps pipeline',
+      },
       {
         type: 'code',
         language: 'yaml',
-        content: `apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: web-app
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: web
-  template:
-    metadata:
-      labels:
-        app: web
-    spec:
-      containers:
-      - name: web
-        image: web-app:1.0.0
-        ports:
-        - containerPort: 3000
-        resources:
-          limits:
-            memory: "512Mi"
-            cpu: "500m"`,
+        content: 'version: "3.8" services: web: image: nginx:alpine ports: - "80:80"',
+      },
+      {
+        type: 'list',
+        ordered: true,
+        items: ['Continuous Integration (CI)', 'Continuous Deployment (CD)', 'Infrastructure as Code (IaC)', 'Monitoring and Logging', 'Automation'],
+      },
+      {
+        type: 'alert',
+        content: 'DevOps is crucial for speeding up the software development process and improving quality.',
+        variant: 'success',
+      },
+      {
+        type: 'quote',
+        content: 'DevOps is the union of people, process, and products to enable continuous delivery of value to our end users.',
+        author: 'Donovan Brown',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'DevOps is an approach that combines software development and operations processes.',
+      },
+      {
+        type: 'link',
+        content: 'What is DevOps? | Part 2',
+        url: 'https://mustafabaser.net/what-is-devops-2',
+      },
+      {
+        type: 'table',
+        headers: ['Practice', 'Description'],
+        rows: [
+          ['Continuous Integration', 'Automatically integrates code changes from multiple contributors'],
+          ['Continuous Deployment', 'Automatically deploys code changes to production'],
+          ['Infrastructure as Code', 'Manages and provisions infrastructure through code'],
+          ['Monitoring and Logging', 'Tracks the performance and health of the application'],
+          ['Automation', 'Automates repetitive tasks to improve efficiency'],
+        ],
+        caption: 'Key practices in DevOps',
       },
     ],
-    imageUrl:
-      'https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&q=80&w=2071',
-    publishedAt: '2024-02-25T14:00:00Z',
+    imageUrl: 'https://images.unsplash.com/photo-1554902843-260acd0993f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    publishedAt: '2024-01-09T11:26:08Z',
     get readTime() {
       return calculateReadingTime(this.content);
     },
   },
+  /* Blog Post 5 */
   {
     id: 5,
-    title: 'Temiz Kod Yazma Sanatı',
-    slug: 'temiz-kod-yazma-sanati',
-    category: 'Best Practices',
-    excerpt: 'Clean Code prensipleri ve yazılım geliştirmede en iyi pratikler.',
+    title: 'Database Management',
+    slug: 'database-management',
+    category: 'Database',
+    excerpt: 'Database management involves the techniques and tools used to store, manage, and query data.',
     content: [
-      'Temiz kod yazmak, sürdürülebilir ve okunaklı uygulamalar geliştirmenin temelidir. Bu yazıda, clean code prensiplerini ve pratik örneklerini inceleyeceğiz.',
-      'SOLID prensiplerini uygulayan bir örnek:',
+      {
+        type: 'text',
+        content: 'Database management involves the techniques and tools used to store, manage, and query data.',
+      },
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070',
+        alt: 'Database example',
+        caption: 'An example of a database schema',
+      },
       {
         type: 'code',
-        language: 'typescript',
-        content: `// Kötü örnek
-class UserService {
-  async createUser(userData: any) {
-    // Validation
-    if (!userData.email || !userData.password) {
-      throw new Error('Invalid user data');
-    }
-    
-    // Database operation
-    const user = await db.users.create(userData);
-    
-    // Send email
-    await sendWelcomeEmail(user.email);
-    
-    return user;
-  }
-}
-
-// İyi örnek
-interface UserValidator {
-  validate(userData: UserDTO): boolean;
-}
-
-interface UserRepository {
-  create(userData: UserDTO): Promise<User>;
-}
-
-interface EmailService {
-  sendWelcomeEmail(email: string): Promise<void>;
-}
-
-class UserService {
-  constructor(
-    private validator: UserValidator,
-    private repository: UserRepository,
-    private emailService: EmailService
-  ) {}
-
-  async createUser(userData: UserDTO): Promise<User> {
-    if (!this.validator.validate(userData)) {
-      throw new Error('Invalid user data');
-    }
-    
-    const user = await this.repository.create(userData);
-    await this.emailService.sendWelcomeEmail(user.email);
-    
-    return user;
-  }
-}`,
+        language: 'sql',
+        content: 'CREATE TABLE Users ( id INT PRIMARY KEY, name VARCHAR(100), email VARCHAR(100) );',
+      },
+      {
+        type: 'list',
+        ordered: true,
+        items: ['SQL', 'NoSQL', 'Database Design', 'Indexing', 'Security'],
+      },
+      {
+        type: 'alert',
+        content: 'Database management is crucial for ensuring data security and performance.',
+        variant: 'success',
+      },
+      {
+        type: 'quote',
+        content: 'Data is a precious thing and will last longer than the systems themselves.',
+        author: 'Tim Berners-Lee',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'Database management involves the techniques and tools used to store, manage, and query data.',
+      },
+      {
+        type: 'link',
+        content: 'Database Management | Part 2',
+        url: 'https://mustafabaser.net/database-management-2',
+      },
+      {
+        type: 'table',
+        headers: ['Concept', 'Description'],
+        rows: [
+          ['SQL', 'Structured Query Language for managing relational databases'],
+          ['NoSQL', 'Non-relational databases for handling unstructured data'],
+          ['Database Design', 'The process of producing a detailed model of a database'],
+          ['Indexing', 'A technique to improve the speed of data retrieval'],
+          ['Security', 'Protecting the database from unauthorized access'],
+        ],
+        caption: 'Key concepts in database management',
       },
     ],
-    imageUrl:
-      'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2070',
-    publishedAt: '2024-02-20T11:00:00Z',
+    imageUrl: 'https://images.unsplash.com/photo-1672385503236-b265b253268e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    publishedAt: '2024-01-10T11:26:08Z',
     get readTime() {
       return calculateReadingTime(this.content);
     },
   },
+  /* Blog Post 6 */
   {
     id: 6,
-    title: 'GraphQL ve Modern API Tasarımı',
-    slug: 'graphql-modern-api',
+    title: 'Microservices Architecture',
+    slug: 'microservices-architecture',
     category: 'Backend',
-    excerpt: "GraphQL ile esnek ve verimli API'ler nasıl tasarlanır?",
+    excerpt: 'Microservices architecture breaks down large applications into small, independent services, providing flexibility and scalability.',
     content: [
-      "GraphQL, modern API tasarımında devrim yaratan bir sorgu dili ve runtime'dır. REST API'lerin yaşadığı over-fetching ve under-fetching problemlerine elegant bir çözüm sunar.",
-      'Temel bir GraphQL schema tanımı:',
+      {
+        type: 'text',
+        content: 'Microservices architecture breaks down large applications into small, independent services, providing flexibility and scalability.',
+      },
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070',
+        alt: 'Microservices example',
+        caption: 'An example of microservices architecture',
+      },
+      {
+        type: 'code',
+        language: 'yaml',
+        content: 'version: "3.8" services: user-service: image: user-service:latest ports: - "8080:8080"',
+      },
+      {
+        type: 'list',
+        ordered: true,
+        items: ['Independent Services', 'API Gateway', 'Service Discovery', 'Monitoring and Logging', 'Automation'],
+      },
+      {
+        type: 'alert',
+        content: 'Microservices architecture breaks down large applications into small, independent services, providing flexibility and scalability.',
+        variant: 'success',
+      },
+      {
+        type: 'quote',
+        content: 'Microservices are small, independent processes that communicate over a network to fulfill a goal.',
+        author: 'Sam Newman',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'Microservices architecture breaks down large applications into small, independent services, providing flexibility and scalability.',
+      },
+      {
+        type: 'link',
+        content: 'Microservices Architecture | Part 2',
+        url: 'https://mustafabaser.net/microservices-architecture-2',
+      },
+      {
+        type: 'table',
+        headers: ['Component', 'Description'],
+        rows: [
+          ['Independent Services', 'Each service is developed, deployed, and scaled independently'],
+          ['API Gateway', 'A single entry point for all client requests'],
+          ['Service Discovery', 'Automatically detects available services'],
+          ['Monitoring and Logging', 'Tracks the performance and health of each service'],
+          ['Automation', 'Automates the deployment and management of services'],
+        ],
+        caption: 'Key components in microservices architecture',
+      },
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1672858460787-fb29ed7352f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    publishedAt: '2024-01-11T11:26:08Z',
+    get readTime() {
+      return calculateReadingTime(this.content);
+    },
+  },
+  /* Blog Post 7 */
+  {
+    id: 7,
+    title: 'Introduction to React Development',
+    slug: 'introduction-to-react-development',
+    category: 'Frontend',
+    excerpt: 'React is a popular JavaScript library used for building user interfaces.',
+    content: [
+      {
+        type: 'text',
+        content: 'React is a popular JavaScript library used for building user interfaces.',
+      },
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2070',
+        alt: 'React example',
+        caption: 'An example of a React component',
+      },
+      {
+        type: 'code',
+        language: 'javascript',
+        content: 'import React from "react"; import ReactDOM from "react-dom"; function App() { return <h1>Hello World!</h1>; } ReactDOM.render(<App />, document.getElementById("root"));',
+      },
+      {
+        type: 'list',
+        ordered: true,
+        items: ['Components', 'State Management', 'Props', 'Lifecycle Methods', 'Hooks'],
+      },
+      {
+        type: 'alert',
+        content: 'React is a popular JavaScript library used for building user interfaces.',
+        variant: 'success',
+      },
+      {
+        type: 'quote',
+        content: 'React makes it painless to create interactive UIs.',
+        author: 'React Documentation',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'React is a popular JavaScript library used for building user interfaces.',
+      },
+      {
+        type: 'link',
+        content: 'Introduction to React Development | Part 2',
+        url: 'https://mustafabaser.net/introduction-to-react-development-2',
+      },
+      {
+        type: 'table',
+        headers: ['Concept', 'Description'],
+        rows: [
+          ['Components', 'Reusable pieces of the UI'],
+          ['State Management', 'Managing the state of the application'],
+          ['Props', 'Passing data from parent to child components'],
+          ['Lifecycle Methods', 'Methods that run during different phases of a component’s life'],
+          ['Hooks', 'Functions that let you use state and other React features without writing a class'],
+        ],
+        caption: 'Key concepts in React development',
+      },
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1570221622224-3bb8f08f166c?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    publishedAt: '2024-01-12T11:26:08Z',
+    get readTime() {
+      return calculateReadingTime(this.content);
+    },
+  },
+  /* Blog Post 8 */
+  {
+    id: 8,
+    title: 'CI/CD Pipelines',
+    slug: 'ci-cd-pipelines',
+    category: 'DevOps',
+    excerpt: 'CI/CD pipelines automate the continuous integration and continuous deployment processes.',
+    content: [
+      {
+        type: 'text',
+        content: 'CI/CD pipelines automate the continuous integration and continuous deployment processes.',
+      },
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070',
+        alt: 'CI/CD example',
+        caption: 'An example of a CI/CD pipeline',
+      },
+      {
+        type: 'code',
+        language: 'yaml',
+        content: 'pipeline: stages: - build: script: - echo "Building..." - test: script: - echo "Testing..." - deploy: script: - echo "Deploying..."',
+      },
+      {
+        type: 'list',
+        ordered: true,
+        items: ['Build', 'Test', 'Deploy', 'Monitoring', 'Rollback'],
+      },
+      {
+        type: 'alert',
+        content: 'CI/CD pipelines automate the continuous integration and continuous deployment processes.',
+        variant: 'success',
+      },
+      {
+        type: 'quote',
+        content: 'CI/CD pipelines enable teams to deliver code changes more frequently and reliably.',
+        author: 'Unknown',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'CI/CD pipelines automate the continuous integration and continuous deployment processes.',
+      },
+      {
+        type: 'link',
+        content: 'CI/CD Pipelines | Part 2',
+        url: 'https://mustafabaser.net/ci-cd-pipelines-2',
+      },
+      {
+        type: 'table',
+        headers: ['Stage', 'Description'],
+        rows: [
+          ['Build', 'Compiles the code and prepares it for testing'],
+          ['Test', 'Runs automated tests to ensure code quality'],
+          ['Deploy', 'Deploys the code to a production environment'],
+          ['Monitoring', 'Tracks the performance and health of the deployed application'],
+          ['Rollback', 'Reverts the deployment if issues are detected'],
+        ],
+        caption: 'Key stages in CI/CD pipelines',
+      },
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1703969083653-da62f9ea70af?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    publishedAt: '2024-01-13T11:26:08Z',
+    get readTime() {
+      return calculateReadingTime(this.content);
+    },
+  },
+  /* Blog Post 9 */
+  {
+    id: 9,
+    title: 'SQL Optimization',
+    slug: 'sql-optimization',
+    category: 'Database',
+    excerpt: 'SQL optimization involves techniques to improve the performance of database queries.',
+    content: [
+      {
+        type: 'text',
+        content: 'SQL optimization involves techniques to improve the performance of database queries.',
+      },
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070',
+        alt: 'SQL example',
+        caption: 'An example of SQL query optimization',
+      },
+      {
+        type: 'code',
+        language: 'sql',
+        content: 'SELECT * FROM Users WHERE name = "John Doe";',
+      },
+      {
+        type: 'list',
+        ordered: true,
+        items: ['Indexing', 'Query Planning', 'Join Optimization', 'Cache Usage', 'Partitioning'],
+      },
+      {
+        type: 'alert',
+        content: 'SQL optimization involves techniques to improve the performance of database queries.',
+        variant: 'success',
+      },
+      {
+        type: 'quote',
+        content: 'The goal of SQL optimization is to reduce the time it takes to execute a query.',
+        author: 'Unknown',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'SQL optimization involves techniques to improve the performance of database queries.',
+      },
+      {
+        type: 'link',
+        content: 'SQL Optimization | Part 2',
+        url: 'https://mustafabaser.net/sql-optimization-2',
+      },
+      {
+        type: 'table',
+        headers: ['Technique', 'Description'],
+        rows: [
+          ['Indexing', 'Creates indexes on columns to speed up data retrieval'],
+          ['Query Planning', 'Analyzes and optimizes the execution plan of a query'],
+          ['Join Optimization', 'Optimizes the way tables are joined in a query'],
+          ['Cache Usage', 'Stores frequently accessed data in memory for faster retrieval'],
+          ['Partitioning', 'Divides large tables into smaller, more manageable pieces'],
+        ],
+        caption: 'Key techniques in SQL optimization',
+      },
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    publishedAt: '2024-01-14T11:26:08Z',
+    get readTime() {
+      return calculateReadingTime(this.content);
+    },
+  },
+  /* Blog Post 10 */
+  {
+    id: 10,
+    title: 'Introduction to GraphQL',
+    slug: 'introduction-to-graphql',
+    category: 'Backend',
+    excerpt: 'GraphQL is a flexible and efficient query language and runtime for APIs.',
+    content: [
+      {
+        type: 'text',
+        content: 'GraphQL is a flexible and efficient query language and runtime for APIs.',
+      },
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070',
+        alt: 'GraphQL example',
+        caption: 'An example of a GraphQL query',
+      },
       {
         type: 'code',
         language: 'graphql',
-        content: `type User {
-  id: ID!
-  name: String!
-  email: String!
-  posts: [Post!]!
-}
-
-type Post {
-  id: ID!
-  title: String!
-  content: String!
-  author: User!
-  comments: [Comment!]!
-}
-
-type Comment {
-  id: ID!
-  content: String!
-  author: User!
-}
-
-type Query {
-  user(id: ID!): User
-  posts: [Post!]!
-}
-
-type Mutation {
-  createPost(title: String!, content: String!): Post!
-  addComment(postId: ID!, content: String!): Comment!
-}`,
+        content: 'type Query { hello: String }',
       },
-      'TypeScript ile resolver implementasyonu:',
       {
-        type: 'code',
-        language: 'typescript',
-        content: `const resolvers = {
-  Query: {
-    user: async (_, { id }, context) => {
-      return await context.prisma.user.findUnique({
-        where: { id },
-        include: { posts: true }
-      });
-    },
-    posts: async (_, __, context) => {
-      return await context.prisma.post.findMany({
-        include: { author: true, comments: true }
-      });
-    }
-  },
-  
-  Mutation: {
-    createPost: async (_, { title, content }, context) => {
-      const userId = context.getCurrentUserId();
-      return await context.prisma.post.create({
-        data: {
-          title,
-          content,
-          authorId: userId
-        }
-      });
-    }
-  }
-};`,
+        type: 'list',
+        ordered: true,
+        items: ['Schema Design', 'Query and Mutation', 'Resolvers', 'Type System', 'Introspection'],
+      },
+      {
+        type: 'alert',
+        content: 'GraphQL is a flexible and efficient query language and runtime for APIs.',
+        variant: 'success',
+      },
+      {
+        type: 'quote',
+        content: 'GraphQL is a query language for your API, and a server-side runtime for executing queries by using a type system you define for your data.',
+        author: 'GraphQL Documentation',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'GraphQL is a flexible and efficient query language and runtime for APIs.',
+      },
+      {
+        type: 'link',
+        content: 'Introduction to GraphQL | Part 2',
+        url: 'https://mustafabaser.net/introduction-to-graphql-2',
+      },
+      {
+        type: 'table',
+        headers: ['Concept', 'Description'],
+        rows: [
+          ['Schema Design', 'Defines the structure of the data and the queries'],
+          ['Query and Mutation', 'Operations to fetch and modify data'],
+          ['Resolvers', 'Functions that resolve the data for a single field in your schema'],
+          ['Type System', 'Defines the types of data and their relationships'],
+          ['Introspection', 'Allows clients to query the schema for information about the types and queries'],
+        ],
+        caption: 'Key concepts in GraphQL',
       },
     ],
-    imageUrl:
-      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2034',
-    publishedAt: '2024-02-15T08:30:00Z',
+    imageUrl: 'https://images.unsplash.com/photo-1687603917313-ccae1a289a9d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    publishedAt: '2024-01-15T11:26:08Z',
     get readTime() {
       return calculateReadingTime(this.content);
     },
   },
-    {
-      id: 7,
-      title: 'REST API Tasarım İlkeleri',
-      slug: 'rest-api-tasarim-ilkeleri',
-      category: 'Backend',
-      excerpt: 'RESTful API tasarımında en iyi uygulamaları öğrenin.',
-      content: [
-        "REST, API tasarımında yaygın olarak kullanılan bir mimari stildir. Kaynak temelli yapısı ile veri paylaşımı ve sistemler arası etkileşimi kolaylaştırır.",
-        'Örnek bir RESTful kaynak yapısı:',
-        {
-          type: 'code',
-          language: 'javascript',
-          content: `GET /users/{id}
-  PUT /users/{id}
-  DELETE /users/{id}
-  POST /users`
-        },
-        'Express ile basit bir REST API oluşturma:',
-        {
-          type: 'code',
-          language: 'javascript',
-          content: `const express = require('express');
-  const app = express();
-  app.use(express.json());
-  
-  app.get('/users/:id', (req, res) => {
-    const user = users.find(u => u.id === req.params.id);
-    res.send(user);
-  });`
-        }
-      ],
-      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=REST+API+Tasarım+İlkeleri',
-      publishedAt: '2024-03-10T10:00:00Z',
-      get readTime() {
-        return calculateReadingTime(this.content);
-      }
+  /* Blog Post 11 */
+  {
+    id: 11,
+    title: 'Introduction to Vue.js Development',
+    slug: 'introduction-to-vuejs-development',
+    category: 'Frontend',
+    excerpt: 'Vue.js is a popular JavaScript framework used for building user interfaces.',
+    content: [
+      {
+        type: 'text',
+        content: 'Vue.js is a popular JavaScript framework used for building user interfaces.',
+      },
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2070',
+        alt: 'Vue.js example',
+        caption: 'An example of a Vue.js component',
+      },
+      {
+        type: 'code',
+        language: 'javascript',
+        content: 'new Vue({ el: "#app", data: { message: "Hello Vue!" } });',
+      },
+      {
+        type: 'list',
+        ordered: true,
+        items: ['Components', 'State Management', 'Props', 'Lifecycle Methods', 'Directives'],
+      },
+      {
+        type: 'alert',
+        content: 'Vue.js is a popular JavaScript framework used for building user interfaces.',
+        variant: 'success',
+      },
+      {
+        type: 'quote',
+        content: 'Vue.js is a progressive framework for building user interfaces.',
+        author: 'Vue.js Documentation',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'Vue.js is a popular JavaScript framework used for building user interfaces.',
+      },
+      {
+        type: 'link',
+        content: 'Introduction to Vue.js Development | Part 2',
+        url: 'https://mustafabaser.net/introduction-to-vuejs-development-2',
+      },
+      {
+        type: 'table',
+        headers: ['Concept', 'Description'],
+        rows: [
+          ['Components', 'Reusable pieces of the UI'],
+          ['State Management', 'Managing the state of the application'],
+          ['Props', 'Passing data from parent to child components'],
+          ['Lifecycle Methods', 'Methods that run during different phases of a component’s life'],
+          ['Directives', 'Special tokens in the markup that tell the library to do something to a DOM element'],
+        ],
+        caption: 'Key concepts in Vue.js development',
+      },
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1585079542156-2755d9c8a094?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    publishedAt: '2024-01-16T11:26:08Z',
+    get readTime() {
+      return calculateReadingTime(this.content);
     },
-  
-    {
-      id: 8,
-      title: 'JavaScript ile Fonksiyonel Programlama',
-      slug: 'javascript-fonksiyonel-programlama',
-      category: 'Frontend',
-      excerpt: 'Fonksiyonel programlama prensiplerini JavaScript ile uygulayın.',
-      content: [
-        "Fonksiyonel programlama, yan etkisiz fonksiyonlar ve değiştirilemez verilerle yazılım geliştirmeye odaklanır.",
-        'Kapsamlı bir örnek:',
-        {
-          type: 'code',
-          language: 'javascript',
-          content: `const add = (a) => (b) => a + b;
-  const increment = add(1);
-  console.log(increment(2)); // 3`
-        }
-      ],
-      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Fonksiyonel+Programlama',
-      publishedAt: '2024-03-15T09:30:00Z',
-      get readTime() {
-        return calculateReadingTime(this.content);
-      }
+  },
+  /* Blog Post 12 */
+  {
+    id: 12,
+    title: 'Introduction to Kubernetes',
+    slug: 'introduction-to-kubernetes',
+    category: 'DevOps',
+    excerpt: 'Kubernetes is an open-source platform for container orchestration.',
+    content: [
+      {
+        type: 'text',
+        content: 'Kubernetes is an open-source platform for container orchestration.',
+      },
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070',
+        alt: 'Kubernetes example',
+        caption: 'An example of a Kubernetes cluster',
+      },
+      {
+        type: 'code',
+        language: 'yaml',
+        content: 'apiVersion: v1 kind: Pod metadata: name: mypod spec: containers: - name: mycontainer image: nginx',
+      },
+      {
+        type: 'list',
+        ordered: true,
+        items: ['Pods', 'Services', 'Deployments', 'ReplicaSets', 'ConfigMaps'],
+      },
+      {
+        type: 'alert',
+        content: 'Kubernetes is an open-source platform for container orchestration.',
+        variant: 'success',
+      },
+      {
+        type: 'quote',
+        content: 'Kubernetes is an open-source system for automating deployment, scaling, and operations of application containers across clusters of hosts.',
+        author: 'Kubernetes Documentation',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        type: 'heading',
+        content: 'Conclusion',
+        level: 2,
+      },
+      {
+        type: 'text',
+        content: 'Kubernetes is an open-source platform for container orchestration.',
+      },
+      {
+        type: 'link',
+        content: 'Introduction to Kubernetes | Part 2',
+        url: 'https://mustafabaser.net/introduction-to-kubernetes-2',
+      },
+      {
+        type: 'table',
+        headers: ['Component', 'Description'],
+        rows: [
+          ['Pods', 'The smallest and simplest Kubernetes object'],
+          ['Services', 'An abstraction which defines a logical set of Pods and a policy by which to access them'],
+          ['Deployments', 'Provide declarative updates to applications'],
+          ['ReplicaSets', 'Ensure a specified number of pod replicas are running at any given time'],
+          ['ConfigMaps', 'Store configuration data that can be passed to containers'],
+        ],
+        caption: 'Key components in Kubernetes',
+      },
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1654618977232-a6c6dea9d1e8?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    publishedAt: '2024-01-17T11:26:08Z',
+    get readTime() {
+      return calculateReadingTime(this.content);
     },
-  
-    {
-      id: 9,
-      title: 'TypeScript ile Güçlü Tip Kontrolü',
-      slug: 'typescript-guclu-tip-kontrolu',
-      category: 'Backend',
-      excerpt: 'TypeScript ile güçlü ve güvenli kod nasıl yazılır?',
-      content: [
-        "TypeScript, JavaScript'in tür güvenliği sağlamayan yapısına çözüm sunarak daha güvenli bir kod yazımını mümkün kılar.",
-        'TypeScript ile basit bir fonksiyon tanımı:',
-        {
-          type: 'code',
-          language: 'typescript',
-          content: `function add(a: number, b: number): number {
-    return a + b;
-  }`
-        }
-      ],
-      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=TypeScript+Tip+Kontrolü',
-      publishedAt: '2024-03-20T11:15:00Z',
-      get readTime() {
-        return calculateReadingTime(this.content);
-      }
-    },
-  
-    {
-      id: 10,
-      title: 'Kapsülleme ve Nesne Tabanlı Programlama',
-      slug: 'kapsulleme-ntp',
-      category: 'Backend',
-      excerpt: 'Nesne tabanlı programlamada kapsülleme prensipleri.',
-      content: [
-        "Kapsülleme, verileri ve işlevleri bir arada tutarak dış erişimi sınırlar ve veri gizliliğini sağlar.",
-        'Kapsülleme örneği:',
-        {
-          type: 'code',
-          language: 'javascript',
-          content: `class Person {
-    #name;
-    
-    constructor(name) {
-      this.#name = name;
-    }
-    
-    getName() {
-      return this.#name;
-    }
-  }`
-        }
-      ],
-      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Kapsülleme',
-      publishedAt: '2024-04-01T14:00:00Z',
-      get readTime() {
-        return calculateReadingTime(this.content);
-      }
-    },
-  
-    {
-      id: 11,
-      title: 'MongoDB ile NoSQL Veritabanı Tasarımı',
-      slug: 'mongodb-nosql-tasarim',
-      category: 'Database',
-      excerpt: 'MongoDB ile esnek ve ölçeklenebilir NoSQL veritabanı nasıl tasarlanır?',
-      content: [
-        "MongoDB, ilişkisel olmayan yapısı ile esnek veri saklama imkanları sunar ve büyük veri setleri ile hızlı çalışır.",
-        'MongoDB veri modeli örneği:',
-        {
-          type: 'code',
-          language: 'javascript',
-          content: `const userSchema = {
-    name: String,
-    email: String,
-    posts: [{ title: String, content: String }]
-  };`
-        }
-      ],
-      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=MongoDB+NoSQL+Veritabanı',
-      publishedAt: '2024-04-12T09:45:00Z',
-      get readTime() {
-        return calculateReadingTime(this.content);
-      }
-    },
-  
-    {
-      id: 12,
-      title: 'Docker ile Uygulama Konteynerleştirme',
-      slug: 'docker-uygulama-konteynerlestirme',
-      category: 'DevOps',
-      excerpt: 'Docker ile uygulamalarınızı izole bir şekilde çalıştırın.',
-      content: [
-        "Docker, uygulama ve bağımlılıklarını bir konteyner içinde izole bir şekilde çalıştırarak taşınabilirlik sağlar.",
-        'Dockerfile örneği:',
-        {
-          type: 'code',
-          language: 'dockerfile',
-          content: `FROM node:14
-  WORKDIR /app
-  COPY . .
-  RUN npm install
-  CMD ["npm", "start"]`
-        }
-      ],
-      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Docker+Konteynerleştirme',
-      publishedAt: '2024-04-20T10:30:00Z',
-      get readTime() {
-        return calculateReadingTime(this.content);
-      }
-    },
-  
-    {
-      id: 13,
-      title: 'Kubernetes ile Mikroservis Yönetimi',
-      slug: 'kubernetes-mikroservis-yonetimi',
-      category: 'DevOps',
-      excerpt: 'Kubernetes ile mikroservisleri ölçeklenebilir ve yönetilebilir bir şekilde çalıştırma.',
-      content: [
-        "Kubernetes, mikroservisleri orkestrasyon ile yönetmek için popüler bir platformdur.",
-        'Basit bir deployment.yaml dosyası:',
-        {
-          type: 'code',
-          language: 'yaml',
-          content: `apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    name: myapp
-  spec:
-    replicas: 2
-    selector:
-      matchLabels:
-        app: myapp
-    template:
-      metadata:
-        labels:
-          app: myapp
-      spec:
-        containers:
-        - name: myapp
-          image: myapp:1.0.0`
-        }
-      ],
-      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Kubernetes+Mikroservis+Yönetimi',
-      publishedAt: '2024-04-25T12:10:00Z',
-      get readTime() {
-        return calculateReadingTime(this.content);
-      }
-    },
-  
-    {
-      id: 14,
-      title: 'Vue.js ile SPA Geliştirme',
-      slug: 'vue-spa-gelistirme',
-      category: 'Frontend',
-      excerpt: 'Vue.js ile modern, dinamik tek sayfa uygulamaları nasıl geliştirilir?',
-      content: [
-        "Vue.js, komponent tabanlı yapısı ile dinamik ve hızlı tek sayfa uygulamaları geliştirmeyi sağlar.",
-        'Vue bileşen örneği:',
-        {
-          type: 'code',
-          language: 'javascript',
-          content: `<template>
-    <div>{{ message }}</div>
-  </template>
-  <script>
-  export default {
-    data() {
-      return { message: 'Merhaba Vue!' };
-    }
-  };
-  </script>`
-        }
-      ],
-      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Vue.js+SPA+Geliştirme',
-      publishedAt: '2024-05-05T11:20:00Z',
-      get readTime() {
-        return calculateReadingTime(this.content);
-      }
-    },
-  
-    {
-      id: 15,
-      title: 'Git ile Versiyon Kontrolü',
-      slug: 'git-versiyon-kontrolu',
-      category: 'DevOps',
-      excerpt: 'Git ile sürüm kontrolünün temellerini öğrenin.',
-      content: [
-        "Git, yazılım geliştirme projelerinde versiyon kontrolü sağlamak için yaygın olarak kullanılan bir sistemdir.",
-        'Git komut örneği:',
-        {
-          type: 'code',
-          language: 'bash',
-          content: `git init
-  git add .
-  git commit -m "İlk commit"
-  git push origin main`
-        }
-      ],
-      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=Git+Versiyon+Kontrolü',
-      publishedAt: '2024-05-10T09:50:00Z',
-      get readTime() {
-        return calculateReadingTime(this.content);
-      }
-    },
-  
-    {
-      id: 16,
-      title: 'React ile Redux Kullanımı',
-      slug: 'react-redux-kullanimi',
-      category: 'Frontend',
-      excerpt: 'React projelerinde merkezi durum yönetimi için Redux kullanımı.',
-      content: [
-        "Redux, büyük React uygulamalarında durumu yönetmek için kullanılan popüler bir kütüphanedir.",
-        'Redux ile basit bir store yapısı:',
-        {
-          type: 'code',
-          language: 'javascript',
-          content: `import { createStore } from 'redux';
-  const reducer = (state = {}, action) => {
-    switch(action.type) {
-      case 'SET_VALUE':
-        return { ...state, value: action.payload };
-      default:
-        return state;
-    }
-  };
-  const store = createStore(reducer);`
-        }
-      ],
-      imageUrl: 'https://dummyimage.com/600x400/000/fff&text=React+Redux+Kullanımı',
-      publishedAt: '2024-05-15T14:30:00Z',
-      get readTime() {
-        return calculateReadingTime(this.content);
-      }
-    }  
+  },
 ];
