@@ -76,9 +76,9 @@ export default function CookieConsent() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 w-full max-w-md">
+    <div className="fixed inset-x-4 bottom-4 md:right-4 md:left-auto md:w-[28rem] z-50">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden">
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <div className="flex items-start justify-between">
             <div className="flex items-center space-x-3">
               <div className="p-2 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg">

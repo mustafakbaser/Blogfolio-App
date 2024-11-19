@@ -40,7 +40,7 @@ export default function Footer() {
               <Twitter className="w-6 h-6" />
             </a>
           </div>
-          <p className="text-sm text-gray-500 dark:text-gray-400">© 2024 BlogFolio. Tüm hakları saklıdır.</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">© 2024 Mustafa Kürşad Başer. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Menu, X, Github, Search, Home, User, Mail, Loader2, Briefcase } from 'lucide-react';
+import { Atom, Menu, X, Github, Search, Home, User, Mail, Loader2, Briefcase } from 'lucide-react';
 import { useSearch } from '../hooks/useSearch';
 import SearchResults from './SearchResults';
 import ThemeToggle from './ThemeToggle';
@@ -61,16 +61,13 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
-          <Link 
+        <Link 
             to="/" 
             className="flex items-center space-x-2 relative group"
           >
-            <div className="absolute -inset-2 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-all duration-300" />
-            <BookOpen className="h-8 w-8 text-indigo-600 dark:text-indigo-400 transform group-hover:scale-110 transition-transform duration-300" />
-            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
-              MKB
-            </span>
-          </Link>
+            <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300" />
+            <Atom className="h-8 w-8 text-indigo-600 dark:text-indigo-400 transform group-hover:scale-110 transition-transform duration-300" />
+        </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
