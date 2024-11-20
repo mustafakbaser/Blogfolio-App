@@ -18,8 +18,8 @@ export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Sayfa Bulunamadı"
-        description="Aradığınız sayfa bulunamadı. Ana sayfaya dönebilir veya arama yapabilirsiniz."
+        title="Page Not Found"
+        description="The page you are looking for could not be found. You can return to the homepage or use the search function."
       />
       <Header />
       
@@ -51,7 +51,7 @@ export default function NotFound() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Blog yazılarında ara..."
+                placeholder="Search in blog posts..."
                 className="w-full pl-12 pr-4 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-xl border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent shadow-sm"
               />
               <div className="absolute left-4 top-1/2 -translate-y-1/2">

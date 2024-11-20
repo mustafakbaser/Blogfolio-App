@@ -157,7 +157,7 @@ export default function Header() {
                       type="text"
                       value={searchQuery}
                       onChange={handleSearchInputChange}
-                      placeholder="Blog yazılarında ara..."
+                      placeholder="Search in blog posts..."
                       className="w-full pl-12 pr-4 py-3 text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400"
                       autoFocus
                     />
@@ -182,7 +182,7 @@ export default function Header() {
                       onClick={closeSearch}
                       className="px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                     >
-                      Kapat
+                      Close
                     </button>
                   </div>
                 </div>
