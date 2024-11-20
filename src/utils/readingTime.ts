@@ -47,8 +47,9 @@ export function calculateReadingTime(content: ContentSection[]): string {
   const listMinutes = listItems / LIST_ITEMS_PER_MINUTE;
   const tableMinutes = tableCells / TABLE_CELLS_PER_MINUTE;
   
-  // Toplam süreyi yuvarla
+  // Round the total time
   const totalMinutes = Math.ceil(textMinutes + codeMinutes + listMinutes + tableMinutes);
 
-  return `${totalMinutes} dk okuma`;
+  // Return singular or plural form based on the total minutes
+  return totalMinutes === 1 ? `${totalMinutes} min read` : `${totalMinutes} mins read`;
 }

@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Code2, Cpu } from 'lucide-react';
+import { Code2, Cpu, Globe } from 'lucide-react';
 import { blogPosts } from '../data/blogPosts';
 import Header from '../components/Header';
 import BlogCard from '../components/BlogCard';
@@ -71,23 +71,54 @@ export default function Home() {
       <Header />
       
       <main className="flex-grow pt-28 md:pt-24">
-        <div className="max-w-5xl mx-auto px-4 py-12">
-          <div className="space-y-12">
-            <div className="text-center max-w-3xl mx-auto">
-              <div className="inline-flex items-center justify-center p-2 rounded-2xl mb-6">
-                <div className="flex items-center space-x-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
-                  <Code2 className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                  <Cpu className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+        <div className="max-w-5xl mx-auto px-4 py-4">
+          <div className="space-y-4">
+            {/* Header section */}
+            <div className="relative overflow-hidden rounded-3xl backdrop-blur-sm">
+              <div className="absolute inset-0 bg-transparent" />
+              
+              <div className="relative px-6 py-8 sm:px-12 sm:py-12 flex flex-col items-center text-center">
+                {/* Icon Grid */}
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div className="p-3 bg-gradient-to-r from-indigo-600 to-indigo-500 dark:from-indigo-500 dark:to-indigo-400 shadow-lg shadow-indigo-500/20 dark:shadow-indigo-500/10 backdrop-blur-xl rounded-2xl transform hover:scale-105 transition-transform duration-300">
+                    <Code2 className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="p-3 bg-gradient-to-r from-indigo-600 to-indigo-500 dark:from-indigo-500 dark:to-indigo-400 shadow-lg shadow-indigo-500/20 dark:shadow-indigo-500/10 backdrop-blur-xl rounded-2xl transform hover:scale-105 transition-transform duration-300">
+                    <Cpu className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="p-3 bg-gradient-to-r from-indigo-600 to-indigo-500 dark:from-indigo-500 dark:to-indigo-400 shadow-lg shadow-indigo-500/20 dark:shadow-indigo-500/10 backdrop-blur-xl rounded-2xl transform hover:scale-105 transition-transform duration-300">
+                    <Globe className="w-5 h-5 text-white" />
+                  </div>
+                </div>
+
+                {/* Glowing Text Effect */}
+                <h1 className="pb-3 text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-indigo-800 to-indigo-900 dark:from-white dark:via-indigo-200 dark:to-purple-200 mb-4 drop-shadow-sm">
+                  BlogFolio
+                </h1>
+                
+                {/* Animated Tags */}
+                <div className="flex flex-wrap justify-center gap-2 mb-6">
+                  {['Development', 'Design', 'AI', 'Web3'].map((tag, index) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-full text-sm text-gray-600 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 shadow-sm hover:scale-105 transition-transform duration-300"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                
+                {/* Subtitle with Gradient Border */}
+                <div className="inline-block p-[1px] rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 dark:from-indigo-400 dark:to-purple-400 hover:scale-105 transition-transform duration-300">
+                  <div className="px-5 py-1.5 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md">
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Exploring the frontiers of technology and innovation
+                    </p>
+                  </div>
                 </div>
               </div>
-              <h1 className="pb-6 text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                Yazılım ve Teknoloji Blogu
-              </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-200">
-                Modern teknolojiler, yazılım geliştirme, sanat ve insan beyni hakkında içerikler.
-              </p>
-            </div>
-            
+            </div>     
             <CategoryFilter
               categories={categories}
               selectedCategory={selectedCategory}

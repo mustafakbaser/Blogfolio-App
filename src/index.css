@@ -44,3 +44,26 @@
 .animate-slideDown {
   animation: slideDown 0.2s ease-out;
 }
+
+/* Grid Background Pattern */
+.bg-grid-white {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+/* Tag Animation */
+@keyframes tagFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.flex-wrap > span {
+  animation: tagFloat 3s ease-in-out infinite;
+}
