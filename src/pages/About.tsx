@@ -5,8 +5,8 @@ import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 
 const skills = [
-  { name: 'Frontend Development', icon: Layout, level: 90 },
-  { name: 'Backend Development', icon: Database, level: 85 },
+  { name: 'Frontend Development', icon: Layout, level: 85 },
+  { name: 'Backend Development', icon: Database, level: 95 },
   { name: 'System Architecture', icon: Cpu, level: 80 },
   { name: 'Web Technologies', icon: Globe, level: 95 },
   { name: 'Clean Code', icon: Code2, level: 88 },
@@ -18,19 +18,19 @@ const experiences = [
     title: 'Senior Software Engineer',
     company: 'Tech Company',
     period: '2020 - Present',
-    description: 'Modern web uygulamaları geliştirme, mikroservis mimarileri tasarlama ve teknik liderlik.',
+    description: 'Developing modern web applications, designing microservice architectures, and providing technical leadership',
   },
   {
     title: 'Full Stack Developer',
     company: 'Digital Agency',
     period: '2018 - 2020',
-    description: 'Kurumsal web projeleri, e-ticaret sistemleri ve mobil uygulamalar geliştirme.',
+    description: 'Building enterprise web projects, e-commerce systems, and mobile applications.',
   },
   {
     title: 'Frontend Developer',
     company: 'Startup',
     period: '2016 - 2018',
-    description: 'Modern frontend teknolojileri ile kullanıcı deneyimi odaklı arayüzler geliştirme.',
+    description: 'Creating user experience-focused interfaces with modern frontend technologies.',
   },
 ];
 
@@ -57,10 +57,9 @@ export default function About() {
                 <Code2 className="w-5 h-5" />
               </div>
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">Mustafa Başer</h1>
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">Mustafa Kürşad Başer</h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
-              Tutkulu bir yazılım geliştirici olarak, modern web teknolojileri ve kullanıcı deneyimi odaklı 
-              çözümler üretmekten keyif alıyorum.
+            As a passionate software developer, I enjoy creating solutions focused on modern web technologies and user experience.
             </p>
             <div className="flex justify-center space-x-4">
               <a href="#" className="p-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
@@ -80,7 +79,7 @@ export default function About() {
 
           {/* Skills Section */}
           <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8 text-center">Yetenekler</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8 text-center">Skills</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {skills.map((skill, index) => (
                 <div 
@@ -104,7 +103,7 @@ export default function About() {
 
           {/* Experience Section */}
           <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8 text-center">Deneyim</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8 text-center">Experiences</h2>
             <div className="space-y-6">
               {experiences.map((exp, index) => (
                 <div 
@@ -126,7 +125,7 @@ export default function About() {
 
           {/* Tech Stack Section */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8 text-center">Teknoloji Yığını</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8 text-center">Technology Stack</h2>
             <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-sm">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[

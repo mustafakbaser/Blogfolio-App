@@ -25,21 +25,21 @@ export default function SocialShare({ url, title, description }: SocialShareProp
       setShowToast(true);
       setTimeout(() => setShowToast(false), 2000);
     } catch (err) {
-      console.error('Link kopyalanamadı:', err);
+      console.error('The link could not be copied: ', err);
     }
   };
 
   return (
     <div className="border-t border-b border-gray-100 dark:border-gray-800 py-6 my-8">
       <div className="flex flex-col items-center gap-4">
-        <h3 className="text-gray-900 dark:text-gray-100 font-medium">Bu yazıyı paylaş</h3>
+        <h3 className="text-gray-900 dark:text-gray-100 font-medium">Share this post</h3>
         <div className="flex items-center gap-3">
           <a
             href={shareLinks.facebook}
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors"
-            title="Facebook'ta paylaş"
+            title="Share on Facebook"
           >
             <Facebook className="w-5 h-5" />
           </a>
@@ -48,7 +48,7 @@ export default function SocialShare({ url, title, description }: SocialShareProp
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-sky-500 text-white hover:bg-sky-600 transition-colors"
-            title="Twitter'da paylaş"
+            title="Share on X"
           >
             <Twitter className="w-5 h-5" />
           </a>
@@ -57,14 +57,14 @@ export default function SocialShare({ url, title, description }: SocialShareProp
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-blue-700 text-white hover:bg-blue-800 transition-colors"
-            title="LinkedIn'de paylaş"
+            title="Share on LinkedIn"
           >
             <Linkedin className="w-5 h-5" />
           </a>
           <button
             onClick={copyToClipboard}
             className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors relative"
-            title="Linki kopyala"
+            title="Copy link"
           >
             <Link2 className="w-5 h-5" />
           </button>
@@ -79,7 +79,7 @@ export default function SocialShare({ url, title, description }: SocialShareProp
       >
         <div className="bg-gray-900 dark:bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
           <Check className="w-4 h-4 text-emerald-400" />
-          <span className="text-sm">Link kopyalandı!</span>
+          <span className="text-sm">Link copied!</span>
         </div>
       </div>
     </div>

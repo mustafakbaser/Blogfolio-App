@@ -11,11 +11,9 @@ export default function AuthorCard() {
           className="w-24 h-24 rounded-lg object-cover ring-2 ring-gray-100 dark:ring-gray-700"
         />
         <div className="flex-1">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-2">Yazar Adı</h3>
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-2">Author Name</h3>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-            Yazılım Mühendisi. Okumaktan, yazmaktan; öğrendiğini paylaşmaktan büyük keyif duyar. 
-            Yazılım geliştirme dışında; tarih, sanat ve insan psikolojisine dair okuma yapmak 
-            en rafine tutkularından.
+            A passionate writer and tech enthusiast who loves to explore the intersection of technology, culture, and everyday life.
           </p>
           <div className="flex items-center gap-4">
             <a

@@ -29,8 +29,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
-        <Route path="/iletisim" element={<Contact />} />
-        <Route path="/hakkimda" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about-me" element={<About />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

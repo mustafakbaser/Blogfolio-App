@@ -19,7 +19,7 @@ export default function SearchResults({ results, onResultClick }: SearchResultsP
   if (results.length === 0) {
     return (
       <div className="py-8 text-center text-gray-500 dark:text-gray-400">
-        Sonuç bulunamadı.
+        No results found.
       </div>
     );
   }

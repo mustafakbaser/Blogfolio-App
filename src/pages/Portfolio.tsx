@@ -16,26 +16,26 @@ interface Project {
 const projects: Project[] = [
   {
     title: "E-Commerce Platform",
-    description: "Modern bir e-ticaret platformu. React, Node.js ve MongoDB kullanılarak geliştirildi. Gerçek zamanlı stok takibi, gelişmiş arama ve filtreleme özellikleri içeriyor.",
+    description: "A modern e-commerce platform developed using React, Node.js, and MongoDB. It includes real-time inventory tracking, advanced search, and filtering features.",
     tags: ["React", "Node.js", "MongoDB", "Redux", "Tailwind CSS"],
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=2089",
-    githubUrl: "https://github.com/username/ecommerce",
-    liveUrl: "https://ecommerce-demo.com"
+    githubUrl: "https://github.com/mustafakbaser/Blogfolio-App",
+    liveUrl: "#"
   },
   {
     title: "Task Management System",
-    description: "Ekipler için geliştirilmiş proje ve görev yönetim sistemi. Gerçek zamanlı işbirliği, dosya paylaşımı ve otomatik raporlama özellikleri mevcut.",
+    description: "A project and task management system designed for teams. It offers real-time collaboration, file sharing, and automated reporting features.",
     tags: ["TypeScript", "Next.js", "PostgreSQL", "WebSocket"],
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2070",
-    githubUrl: "https://github.com/username/task-manager",
-    liveUrl: "https://task-manager-demo.com"
+    githubUrl: "https://github.com/mustafakbaser/Blogfolio-App",
+    liveUrl: "#"
   },
   {
     title: "AI-Powered Analytics Dashboard",
-    description: "Yapay zeka destekli veri analiz platformu. Kullanıcı davranışlarını analiz ederek öngörülerde bulunuyor ve otomatik raporlar oluşturuyor.",
+    description: "An AI-powered data analytics platform. It analyzes user behavior to provide insights and generates automated reports.",
     tags: ["Python", "React", "TensorFlow", "D3.js"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070",
-    githubUrl: "https://github.com/username/analytics"
+    githubUrl: "https://github.com/mustafakbaser/Blogfolio-App"
   }
 ];
 
@@ -50,8 +50,8 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Portfolyo"
-        description="Geliştirdiğim projeler ve teknik yeteneklerim"
+        title="Portfolio"
+        description="The projects I have developed and my technical skills."
       />
       <Header />
       
@@ -60,10 +60,10 @@ export default function Portfolio() {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Projelerim
+              My Projects
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
-              Modern teknolojiler kullanarak geliştirdiğim projeler ve çalışmalar
+            Projects and work I have developed using modern technologies.
             </p>
           </div>
 
@@ -130,7 +130,7 @@ export default function Portfolio() {
           {/* Technologies Section */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 text-center mb-12">
-              Teknoloji Yığını
+              Technology Stack
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {technologies.map((tech, index) => (
@@ -168,7 +168,7 @@ export default function Portfolio() {
                 href="mailto:contact@example.com"
                 className="px-8 py-3 bg-white dark:bg-gray-900 rounded-full text-lg font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
               >
-                Birlikte Çalışalım
+                Get in touch
               </a>
             </div>
           </div>

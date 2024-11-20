@@ -89,8 +89,7 @@ export default function Header() {
                 isActivePath('/') ? 'text-indigo-600 dark:text-indigo-400 after:w-full' : ''
               }`}
             >
-              <Home className="w-4 h-4" />
-              <span>Ana Sayfa</span>
+              <span>Home</span>
             </Link>
 
             <Link 
@@ -99,32 +98,29 @@ export default function Header() {
                 isActivePath('/portfolio') ? 'text-indigo-600 dark:text-indigo-400 after:w-full' : ''
               }`}
             >
-              <Briefcase className="w-4 h-4" />
-              <span>Portfolyo</span>
+              <span>Portfolio</span>
             </Link>
 
             <Link 
-              to="/hakkimda" 
+              to="/about-me" 
               className={`flex items-center space-x-1.5 text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all ${
-                isActivePath('/hakkimda') ? 'text-indigo-600 dark:text-indigo-400 after:w-full' : ''
+                isActivePath('/about-me') ? 'text-indigo-600 dark:text-indigo-400 after:w-full' : ''
               }`}
             >
-              <User className="w-4 h-4" />
-              <span>Hakkımda</span>
+              <span>About</span>
             </Link>
 
             <Link 
-              to="/iletisim" 
+              to="/contact" 
               className={`flex items-center space-x-1.5 text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all ${
-                isActivePath('/iletisim') ? 'text-indigo-600 dark:text-indigo-400 after:w-full' : ''
+                isActivePath('/contact') ? 'text-indigo-600 dark:text-indigo-400 after:w-full' : ''
               }`}
             >
-              <Mail className="w-4 h-4" />
-              <span>İletişim</span>
+              <span>Contact</span>
             </Link>
 
             <a 
-              href="https://github.com/mustafakbaser" 
+              href="https://github.com/mustafakbaser/Blogfolio-App" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-2.5 text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors hover:scale-110 transform duration-200"
@@ -213,7 +209,7 @@ export default function Header() {
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder="Blog yazılarında ara..."
+                    placeholder="Search in blog posts..."
                     value={searchQuery}
                     onChange={handleSearchInputChange}
                     className="w-full pl-10 pr-4 py-2.5 text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400"
@@ -246,7 +242,7 @@ export default function Header() {
                     }`}
                   >
                     <Home className="w-5 h-5" />
-                    <span>Ana Sayfa</span>
+                    <span>Home</span>
                   </Link>
 
                   <Link 
@@ -257,33 +253,33 @@ export default function Header() {
                     }`}
                   >
                     <Briefcase className="w-5 h-5" />
-                    <span>Portfolyo</span>
+                    <span>Portfolio</span>
                   </Link>
 
                   <Link 
-                    to="/hakkimda"
+                    to="/contact"
                     onClick={() => setIsMenuOpen(false)}
                     className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
-                      isActivePath('/hakkimda') ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+                      isActivePath('/contact') ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
                     }`}
                   >
                     <User className="w-5 h-5" />
-                    <span>Hakkımda</span>
+                    <span>About</span>
                   </Link>
 
                   <Link 
-                    to="/iletisim"
+                    to="/contact"
                     onClick={() => setIsMenuOpen(false)}
                     className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
-                      isActivePath('/iletisim') ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+                      isActivePath('/contact') ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
                     }`}
                   >
                     <Mail className="w-5 h-5" />
-                    <span>İletişim</span>
+                    <span>Contact</span>
                   </Link>
 
                   <a 
-                    href="https://github.com/mustafakbaser"
+                    href="https://github.com/mustafakbaser/Blogfolio-App"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"

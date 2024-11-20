@@ -66,18 +66,18 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="İletişim"
-        description="Bizimle iletişime geçin. Sorularınızı yanıtlamaktan ve önerilerinizi dinlemekten mutluluk duyarız."
+        title="Get in Touch"
+        description="Lets get in touch. I would be happy to answer your questions and listen to your suggestions."
       />
       <Header />
       
       <main className="flex-grow bg-gray-50 dark:bg-gray-900 pt-28 md:pt-32">
         <div className="max-w-5xl mx-auto px-4 py-12">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">İletişime Geçin</h1>
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">Get in Touch</h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Sorularınızı yanıtlamaktan ve önerilerinizi dinlemekten mutluluk duyarız. 
-              Aşağıdaki formu doldurarak bizimle iletişime geçebilirsiniz.
+              I would be happy to answer your questions and listen to your suggestions.
+              You can contact me by filling out the form below.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Ad Soyad *
+                    Full Name *
                   </label>
                   <input
                     type="text"
@@ -96,13 +96,13 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 text-gray-900 dark:text-gray-100 transition-colors"
-                    placeholder="Adınız ve soyadınız"
+                    placeholder="Full Name"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    E-posta *
+                    E-mail *
                   </label>
                   <input
                     type="email"
@@ -112,13 +112,13 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 text-gray-900 dark:text-gray-100 transition-colors"
-                    placeholder="ornek@email.com"
+                    placeholder="example@email.com"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Telefon
+                    Phone
                   </label>
                   <input
                     type="tel"
@@ -127,13 +127,13 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 text-gray-900 dark:text-gray-100 transition-colors"
-                    placeholder="(İsteğe bağlı)"
+                    placeholder="(Optional)"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Mesajınız *
+                    Message *
                   </label>
                   <textarea
                     id="message"
@@ -143,7 +143,7 @@ export default function Contact() {
                     onChange={handleChange}
                     rows={4}
                     className="w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 text-gray-900 dark:text-gray-100 transition-colors resize-none"
-                    placeholder="Mesajınızı buraya yazın..."
+                    placeholder="Write your message here..."
                   />
                 </div>
 
@@ -156,7 +156,7 @@ export default function Contact() {
                 {isSuccess && (
                   <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
                     <p className="text-sm text-green-600 dark:text-green-400">
-                      Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.
+                      Your message has been successfully sent. I'll get back to you as soon as possible.
                     </p>
                   </div>
                 )}
@@ -172,12 +172,12 @@ export default function Contact() {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      Gönderiliyor...
+                      Sending...
                     </span>
                   ) : (
                     <span className="flex items-center justify-center">
                       <Send className="w-5 h-5 mr-2" />
-                      Mesaj Gönder
+                      Submit Message
                     </span>
                   )}
                 </button>
@@ -186,7 +186,7 @@ export default function Contact() {
 
             <div className="order-1 md:order-2">
               <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-sm p-8 space-y-8">
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-50">İletişim Bilgileri</h2>
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-50">Contact Information</h2>
                 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
@@ -194,7 +194,7 @@ export default function Contact() {
                       <Mail className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50">E-posta</h3>
+                      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50">E-mail</h3>
                       <p className="mt-1 text-gray-600 dark:text-gray-300">iletisim@mustafabaser.net</p>
                     </div>
                   </div>
@@ -204,7 +204,7 @@ export default function Contact() {
                       <Phone className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50">Telefon</h3>
+                      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50">Phone</h3>
                       <p className="mt-1 text-gray-600 dark:text-gray-300">+90 (XXX) XXX XX XX</p>
                     </div>
                   </div>
@@ -214,14 +214,14 @@ export default function Contact() {
                       <MapPin className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50">Adres</h3>
-                      <p className="mt-1 text-gray-600 dark:text-gray-300">İstanbul, Türkiye</p>
+                      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50">Address</h3>
+                      <p className="mt-1 text-gray-600 dark:text-gray-300">Izmir, Türkiye</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
-                  <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50 mb-4">Sosyal Medya</h3>
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50 mb-4">Social Accounts</h3>
                   <div className="flex space-x-4">
                     <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

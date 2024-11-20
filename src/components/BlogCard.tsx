@@ -53,7 +53,7 @@ export default function BlogCard({
             to={`/blog/${slug}`}
             className="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium text-sm"
           >
-            Devamını Oku 
+            Read More 
             <span className="ml-1">→</span>
           </Link>
         </div>

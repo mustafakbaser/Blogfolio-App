@@ -37,11 +37,11 @@ export default function NotFound() {
           </div>
 
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-            Houston, bir sorunumuz var!
+            Something seems off...
           </h2>
           
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-            Aradığınız sayfa siber uzayda kaybolmuş görünüyor. Ana sayfaya dönebilir veya aşağıdaki arama motorunu kullanarak içerik arayabilirsiniz.
+            The page you are looking for could not be found. You can return to the home page or use the search engine below to find content.
           </p>
 
           {/* Search Form */}
@@ -93,7 +93,7 @@ export default function NotFound() {
             {searchQuery && results.length === 0 && !isSearching && (
               <div className="mt-6 p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
                 <p className="text-gray-600 dark:text-gray-300">
-                  Aramanızla eşleşen sonuç bulunamadı.
+                  No results found matching your search.
                 </p>
               </div>
             )}
@@ -105,7 +105,7 @@ export default function NotFound() {
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-medium rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
             <Home className="w-5 h-5 mr-2" />
-            Ana Sayfaya Dön
+              Return to Home Page
           </Link>
         </div>
       </main>

@@ -65,8 +65,8 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Ana Sayfa"
-        description="Modern teknoloji ve yazılım geliştirme üzerine güncel blog yazıları. React, TypeScript, Node.js ve daha fazlası."
+        title="Home"
+        description="Up-to-date blog posts on modern technology and software development. React, TypeScript, Node.js, and more."
       />
       <Header />
       
@@ -118,7 +118,9 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>     
+            </div>
+            {/* End of Header section */}
+
             <CategoryFilter
               categories={categories}
               selectedCategory={selectedCategory}
@@ -142,7 +144,7 @@ export default function Home() {
 
             {filteredPosts.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-600 dark:text-gray-300">Bu kategoride henüz yazı bulunmuyor.</p>
+                <p className="text-gray-600 dark:text-gray-300">There are no posts in this category yet.</p>
               </div>
             )}
 

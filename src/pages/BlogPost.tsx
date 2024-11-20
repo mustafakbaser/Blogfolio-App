@@ -268,7 +268,7 @@ export default function BlogPost() {
             <AuthorCard />
 
             <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-6">Benzer Yazılar</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-6">Related Posts</h2>
               <div className="grid gap-8 md:grid-cols-2">
                 {blogPosts
                   .filter(p => p.slug !== post.slug && p.category === post.category)
