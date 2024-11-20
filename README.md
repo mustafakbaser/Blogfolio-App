@@ -2,7 +2,7 @@
 
 A modern, responsive blog and portfolio template built with React, TypeScript, and Tailwind CSS. Features a beautiful dark mode, SEO optimization, and a clean, professional design.
 
-![BlogFolio Preview](https://i.imgur.com/Vs4nIU1.png)
+![BlogFolio Preview](https://i.imgur.com/0DQycdy.png)
 
 ## ✨ Features
 
