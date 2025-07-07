@@ -2,7 +2,7 @@
 
 A modern, responsive blog and portfolio template built with React, TypeScript, and Tailwind CSS. Features a beautiful dark mode, SEO optimization, and a clean, professional design.
 
-![BlogFolio Preview](https://i.imgur.com/0DQycdy.png)
+![BlogFolio Preview](https://res.cloudinary.com/mustafakbaser/image/upload/v1751882498/blogfolio-1_qsqnoq.png)
 
 ## ✨ Features
 
@@ -141,4 +141,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-For questions and support, please email [iletisim@mustafabaser.net](mailto:iletisim@mustafabaser.net).
+For questions and support, please email [iletisim@mustafabaser.net](mailto:info@mustafabaser.net).
