@@ -193,9 +193,9 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="fixed inset-0 z-40 md:hidden">
+          <div className="fixed inset-0 z-50 md:hidden">
             <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMenuOpen(false)} />
-            <nav className="fixed top-0 right-0 bottom-0 w-72 bg-white dark:bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-in-out">
+            <nav className="fixed top-0 right-0 h-screen w-72 bg-white dark:bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-in-out overflow-y-auto">
               <div className="p-6 space-y-8">
                 <div className="flex justify-end">
                   <button
